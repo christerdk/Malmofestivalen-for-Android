@@ -41,6 +41,8 @@ ElmahLogs/
 .idea
 *.iml
 
+.svn
+
 .metadata
 tmp/**
 .DS_Store
