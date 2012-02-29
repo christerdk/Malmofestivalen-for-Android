@@ -1,0 +1,720 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		137AF4261380097300F41204 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137AF4251380097300F41204 /* UIKit.framework */; };
+		137AF4281380097300F41204 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137AF4271380097300F41204 /* Foundation.framework */; };
+		137AF42A1380097300F41204 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137AF4291380097300F41204 /* CoreGraphics.framework */; };
+		137AF4301380097300F41204 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 137AF42E1380097300F41204 /* InfoPlist.strings */; };
+		137AF4331380097300F41204 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 137AF4321380097300F41204 /* main.m */; };
+		137AF4361380097300F41204 /* MalmofestivalenAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 137AF4351380097300F41204 /* MalmofestivalenAppDelegate.m */; };
+		137AF4391380097400F41204 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137AF4371380097400F41204 /* MainWindow.xib */; };
+		137AF43C1380097400F41204 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 137AF43B1380097400F41204 /* RootViewController.m */; };
+		137AF43F1380097400F41204 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 137AF43D1380097400F41204 /* RootViewController.xib */; };
+		137AF4461380097400F41204 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137AF4251380097300F41204 /* UIKit.framework */; };
+		137AF4471380097400F41204 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137AF4271380097300F41204 /* Foundation.framework */; };
+		137AF4481380097400F41204 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137AF4291380097300F41204 /* CoreGraphics.framework */; };
+		137AF4501380097400F41204 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 137AF44E1380097400F41204 /* InfoPlist.strings */; };
+		137AF4531380097400F41204 /* MalmofestivalenTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 137AF4521380097400F41204 /* MalmofestivalenTests.h */; };
+		137AF4551380097400F41204 /* MalmofestivalenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 137AF4541380097400F41204 /* MalmofestivalenTests.m */; };
+		139A2AF013819F3C009C860C /* MainPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139A2AEE13819F3C009C860C /* MainPageTableViewController.m */; };
+		13C811CA1389506F00E9D226 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C811C91389506F00E9D226 /* MapKit.framework */; };
+		13C811D01389762400E9D226 /* SceneDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C811CF1389762400E9D226 /* SceneDetailsViewController.m */; };
+		13C811D31389766D00E9D226 /* SceneDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C811D11389766C00E9D226 /* SceneDetailsViewController.xib */; };
+		13CCB28A1381BE6D00AB3BA2 /* MainPageTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB2881381BE6D00AB3BA2 /* MainPageTableViewController.xib */; };
+		13CCB2A21381BEF600AB3BA2 /* arrowroundleft.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB28D1381BEF600AB3BA2 /* arrowroundleft.png */; };
+		13CCB2A31381BEF600AB3BA2 /* arrowroundright.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB28E1381BEF600AB3BA2 /* arrowroundright.png */; };
+		13CCB2A41381BEF600AB3BA2 /* browser.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB28F1381BEF600AB3BA2 /* browser.png */; };
+		13CCB2A51381BEF600AB3BA2 /* cassette.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB2901381BEF600AB3BA2 /* cassette.png */; };
+		13CCB2A61381BEF600AB3BA2 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB2911381BEF600AB3BA2 /* clock.png */; };
+		13CCB2A71381BEF600AB3BA2 /* facebooklogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB2921381BEF600AB3BA2 /* facebooklogo.png */; };
+		13CCB2A81381BEF600AB3BA2 /* favoritehelp1.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB2931381BEF600AB3BA2 /* favoritehelp1.png */; };
+		13CCB2A91381BEF600AB3BA2 /* favoritehelp2.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB2941381BEF600AB3BA2 /* favoritehelp2.png */; };
+		13CCB2AA1381BEF600AB3BA2 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB2951381BEF600AB3BA2 /* globe.png */; };
+		13CCB2AB1381BEF600AB3BA2 /* happyface.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB2961381BEF600AB3BA2 /* happyface.png */; };
+		13CCB2AC1381BEF600AB3BA2 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB2971381BEF600AB3BA2 /* heart.png */; };
+		13CCB2AD1381BEF600AB3BA2 /* heartoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB2981381BEF600AB3BA2 /* heartoff.png */; };
+		13CCB2AE1381BEF600AB3BA2 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB2991381BEF600AB3BA2 /* icon.png */; };
+		13CCB2AF1381BEF600AB3BA2 /* musicnode.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB29A1381BEF600AB3BA2 /* musicnode.png */; };
+		13CCB2B01381BEF600AB3BA2 /* myspace.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB29B1381BEF600AB3BA2 /* myspace.png */; };
+		13CCB2B11381BEF600AB3BA2 /* normalmapmarker.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB29C1381BEF600AB3BA2 /* normalmapmarker.png */; };
+		13CCB2B21381BEF600AB3BA2 /* question.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB29D1381BEF600AB3BA2 /* question.png */; };
+		13CCB2B31381BEF600AB3BA2 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB29E1381BEF600AB3BA2 /* search.png */; };
+		13CCB2B41381BEF600AB3BA2 /* specialmapmarker.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB29F1381BEF600AB3BA2 /* specialmapmarker.png */; };
+		13CCB2B51381BEF600AB3BA2 /* spotify.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB2A01381BEF600AB3BA2 /* spotify.png */; };
+		13CCB2B61381BEF600AB3BA2 /* world.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCB2A11381BEF600AB3BA2 /* world.png */; };
+		13DDB3B0138586A900BEDC8D /* AllScenesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DDB3AE138586A900BEDC8D /* AllScenesViewController.m */; };
+		13DDB3B7138588AE00BEDC8D /* AllScenesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13DDB3B5138588AE00BEDC8D /* AllScenesViewController.xib */; };
+		13F92F3D1397CBCA008E2F73 /* SceneMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F92F3C1397CBC9008E2F73 /* SceneMapViewController.m */; };
+		13F92F401397D582008E2F73 /* SceneMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F92F3E1397D582008E2F73 /* SceneMapViewController.xib */; };
+		13F92F431397E3F3008E2F73 /* EventDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F92F411397E3F2008E2F73 /* EventDetailsViewController.xib */; };
+		13F92F461397E41C008E2F73 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F92F451397E41B008E2F73 /* EventDetailsViewController.m */; };
+		3590959E13844101003C7136 /* Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3590959D13844101003C7136 /* Scene.m */; };
+		35ADA371138307630021D5E2 /* DatabaseFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ADA370138307630021D5E2 /* DatabaseFactory.m */; };
+		35ADA3741383091F0021D5E2 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35ADA3731383091F0021D5E2 /* libsqlite3.0.dylib */; };
+		35ADA37813830E1A0021D5E2 /* concerts.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 35ADA37713830E1A0021D5E2 /* concerts.sqlite */; };
+		35ADA37C138316340021D5E2 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ADA37B138316340021D5E2 /* Event.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		137AF4491380097400F41204 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 137AF4181380097200F41204 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 137AF4201380097300F41204;
+			remoteInfo = Malmofestivalen;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		137AF4211380097300F41204 /* Malmofestivalen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Malmofestivalen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		137AF4251380097300F41204 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		137AF4271380097300F41204 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		137AF4291380097300F41204 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		137AF42D1380097300F41204 /* Malmofestivalen-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Malmofestivalen-Info.plist"; sourceTree = "<group>"; };
+		137AF42F1380097300F41204 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		137AF4311380097300F41204 /* Malmofestivalen-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Malmofestivalen-Prefix.pch"; sourceTree = "<group>"; };
+		137AF4321380097300F41204 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		137AF4341380097300F41204 /* MalmofestivalenAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MalmofestivalenAppDelegate.h; sourceTree = "<group>"; };
+		137AF4351380097300F41204 /* MalmofestivalenAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MalmofestivalenAppDelegate.m; sourceTree = "<group>"; };
+		137AF4381380097400F41204 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		137AF43A1380097400F41204 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		137AF43B1380097400F41204 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		137AF43E1380097400F41204 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		137AF4451380097400F41204 /* MalmofestivalenTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MalmofestivalenTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		137AF44D1380097400F41204 /* MalmofestivalenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MalmofestivalenTests-Info.plist"; sourceTree = "<group>"; };
+		137AF44F1380097400F41204 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		137AF4511380097400F41204 /* MalmofestivalenTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MalmofestivalenTests-Prefix.pch"; sourceTree = "<group>"; };
+		137AF4521380097400F41204 /* MalmofestivalenTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MalmofestivalenTests.h; sourceTree = "<group>"; };
+		137AF4541380097400F41204 /* MalmofestivalenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MalmofestivalenTests.m; sourceTree = "<group>"; };
+		139A2AED13819F3C009C860C /* MainPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageTableViewController.h; sourceTree = "<group>"; };
+		139A2AEE13819F3C009C860C /* MainPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageTableViewController.m; sourceTree = "<group>"; };
+		13C811C71389505500E9D226 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		13C811C91389506F00E9D226 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		13C811CE1389762400E9D226 /* SceneDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDetailsViewController.h; sourceTree = "<group>"; };
+		13C811CF1389762400E9D226 /* SceneDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDetailsViewController.m; sourceTree = "<group>"; };
+		13C811D21389766D00E9D226 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SceneDetailsViewController.xib; sourceTree = "<group>"; };
+		13CCB2891381BE6D00AB3BA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainPageTableViewController.xib; sourceTree = "<group>"; };
+		13CCB28D1381BEF600AB3BA2 /* arrowroundleft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowroundleft.png; sourceTree = "<group>"; };
+		13CCB28E1381BEF600AB3BA2 /* arrowroundright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowroundright.png; sourceTree = "<group>"; };
+		13CCB28F1381BEF600AB3BA2 /* browser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = browser.png; sourceTree = "<group>"; };
+		13CCB2901381BEF600AB3BA2 /* cassette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cassette.png; sourceTree = "<group>"; };
+		13CCB2911381BEF600AB3BA2 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		13CCB2921381BEF600AB3BA2 /* facebooklogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebooklogo.png; sourceTree = "<group>"; };
+		13CCB2931381BEF600AB3BA2 /* favoritehelp1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favoritehelp1.png; sourceTree = "<group>"; };
+		13CCB2941381BEF600AB3BA2 /* favoritehelp2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favoritehelp2.png; sourceTree = "<group>"; };
+		13CCB2951381BEF600AB3BA2 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
+		13CCB2961381BEF600AB3BA2 /* happyface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happyface.png; sourceTree = "<group>"; };
+		13CCB2971381BEF600AB3BA2 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		13CCB2981381BEF600AB3BA2 /* heartoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartoff.png; sourceTree = "<group>"; };
+		13CCB2991381BEF600AB3BA2 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		13CCB29A1381BEF600AB3BA2 /* musicnode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicnode.png; sourceTree = "<group>"; };
+		13CCB29B1381BEF600AB3BA2 /* myspace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myspace.png; sourceTree = "<group>"; };
+		13CCB29C1381BEF600AB3BA2 /* normalmapmarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normalmapmarker.png; sourceTree = "<group>"; };
+		13CCB29D1381BEF600AB3BA2 /* question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question.png; sourceTree = "<group>"; };
+		13CCB29E1381BEF600AB3BA2 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		13CCB29F1381BEF600AB3BA2 /* specialmapmarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = specialmapmarker.png; sourceTree = "<group>"; };
+		13CCB2A01381BEF600AB3BA2 /* spotify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spotify.png; sourceTree = "<group>"; };
+		13CCB2A11381BEF600AB3BA2 /* world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world.png; sourceTree = "<group>"; };
+		13DDB3AD138586A800BEDC8D /* AllScenesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllScenesViewController.h; sourceTree = "<group>"; };
+		13DDB3AE138586A900BEDC8D /* AllScenesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllScenesViewController.m; sourceTree = "<group>"; };
+		13DDB3B6138588AE00BEDC8D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AllScenesViewController.xib; sourceTree = "<group>"; };
+		13F92F3B1397CBC9008E2F73 /* SceneMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneMapViewController.h; sourceTree = "<group>"; };
+		13F92F3C1397CBC9008E2F73 /* SceneMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneMapViewController.m; sourceTree = "<group>"; };
+		13F92F3F1397D582008E2F73 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SceneMapViewController.xib; sourceTree = "<group>"; };
+		13F92F421397E3F3008E2F73 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EventDetailsViewController.xib; sourceTree = "<group>"; };
+		13F92F441397E41B008E2F73 /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
+		13F92F451397E41B008E2F73 /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
+		3590959C13844101003C7136 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		3590959D13844101003C7136 /* Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scene.m; sourceTree = "<group>"; };
+		35ADA36F138307630021D5E2 /* DatabaseFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseFactory.h; sourceTree = "<group>"; };
+		35ADA370138307630021D5E2 /* DatabaseFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseFactory.m; sourceTree = "<group>"; };
+		35ADA3731383091F0021D5E2 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		35ADA37713830E1A0021D5E2 /* concerts.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = concerts.sqlite; path = data/concerts.sqlite; sourceTree = "<group>"; };
+		35ADA37A138316340021D5E2 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		35ADA37B138316340021D5E2 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		137AF41E1380097300F41204 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35ADA3741383091F0021D5E2 /* libsqlite3.0.dylib in Frameworks */,
+				137AF4261380097300F41204 /* UIKit.framework in Frameworks */,
+				137AF4281380097300F41204 /* Foundation.framework in Frameworks */,
+				137AF42A1380097300F41204 /* CoreGraphics.framework in Frameworks */,
+				13C811CA1389506F00E9D226 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		137AF4411380097400F41204 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				137AF4461380097400F41204 /* UIKit.framework in Frameworks */,
+				137AF4471380097400F41204 /* Foundation.framework in Frameworks */,
+				137AF4481380097400F41204 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		137AF4161380097200F41204 = {
+			isa = PBXGroup;
+			children = (
+				13C811C71389505500E9D226 /* MapKit.framework */,
+				13CCB28B1381BEF600AB3BA2 /* resources */,
+				137AF42B1380097300F41204 /* Malmofestivalen */,
+				137AF44B1380097400F41204 /* MalmofestivalenTests */,
+				137AF4241380097300F41204 /* Frameworks */,
+				137AF4221380097300F41204 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		137AF4221380097300F41204 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				137AF4211380097300F41204 /* Malmofestivalen.app */,
+				137AF4451380097400F41204 /* MalmofestivalenTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		137AF4241380097300F41204 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13C811C91389506F00E9D226 /* MapKit.framework */,
+				35ADA3731383091F0021D5E2 /* libsqlite3.0.dylib */,
+				137AF4251380097300F41204 /* UIKit.framework */,
+				137AF4271380097300F41204 /* Foundation.framework */,
+				137AF4291380097300F41204 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		137AF42B1380097300F41204 /* Malmofestivalen */ = {
+			isa = PBXGroup;
+			children = (
+				13DDB3A31385738000BEDC8D /* ui */,
+				35ADA37513830A4D0021D5E2 /* Data */,
+				137AF4371380097400F41204 /* MainWindow.xib */,
+				137AF42C1380097300F41204 /* Supporting Files */,
+			);
+			path = Malmofestivalen;
+			sourceTree = "<group>";
+		};
+		137AF42C1380097300F41204 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				137AF42D1380097300F41204 /* Malmofestivalen-Info.plist */,
+				137AF42E1380097300F41204 /* InfoPlist.strings */,
+				137AF4311380097300F41204 /* Malmofestivalen-Prefix.pch */,
+				137AF4321380097300F41204 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		137AF44B1380097400F41204 /* MalmofestivalenTests */ = {
+			isa = PBXGroup;
+			children = (
+				137AF4521380097400F41204 /* MalmofestivalenTests.h */,
+				137AF4541380097400F41204 /* MalmofestivalenTests.m */,
+				137AF44C1380097400F41204 /* Supporting Files */,
+			);
+			path = MalmofestivalenTests;
+			sourceTree = "<group>";
+		};
+		137AF44C1380097400F41204 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				137AF44D1380097400F41204 /* MalmofestivalenTests-Info.plist */,
+				137AF44E1380097400F41204 /* InfoPlist.strings */,
+				137AF4511380097400F41204 /* MalmofestivalenTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13CCB28B1381BEF600AB3BA2 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				35ADA37613830E010021D5E2 /* data */,
+				13CCB28C1381BEF600AB3BA2 /* images */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		13CCB28C1381BEF600AB3BA2 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				13CCB28D1381BEF600AB3BA2 /* arrowroundleft.png */,
+				13CCB28E1381BEF600AB3BA2 /* arrowroundright.png */,
+				13CCB28F1381BEF600AB3BA2 /* browser.png */,
+				13CCB2901381BEF600AB3BA2 /* cassette.png */,
+				13CCB2911381BEF600AB3BA2 /* clock.png */,
+				13CCB2921381BEF600AB3BA2 /* facebooklogo.png */,
+				13CCB2931381BEF600AB3BA2 /* favoritehelp1.png */,
+				13CCB2941381BEF600AB3BA2 /* favoritehelp2.png */,
+				13CCB2951381BEF600AB3BA2 /* globe.png */,
+				13CCB2961381BEF600AB3BA2 /* happyface.png */,
+				13CCB2971381BEF600AB3BA2 /* heart.png */,
+				13CCB2981381BEF600AB3BA2 /* heartoff.png */,
+				13CCB2991381BEF600AB3BA2 /* icon.png */,
+				13CCB29A1381BEF600AB3BA2 /* musicnode.png */,
+				13CCB29B1381BEF600AB3BA2 /* myspace.png */,
+				13CCB29C1381BEF600AB3BA2 /* normalmapmarker.png */,
+				13CCB29D1381BEF600AB3BA2 /* question.png */,
+				13CCB29E1381BEF600AB3BA2 /* search.png */,
+				13CCB29F1381BEF600AB3BA2 /* specialmapmarker.png */,
+				13CCB2A01381BEF600AB3BA2 /* spotify.png */,
+				13CCB2A11381BEF600AB3BA2 /* world.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		13DDB3A31385738000BEDC8D /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				137AF4341380097300F41204 /* MalmofestivalenAppDelegate.h */,
+				137AF4351380097300F41204 /* MalmofestivalenAppDelegate.m */,
+				13C811D11389766C00E9D226 /* SceneDetailsViewController.xib */,
+				13C811CE1389762400E9D226 /* SceneDetailsViewController.h */,
+				13C811CF1389762400E9D226 /* SceneDetailsViewController.m */,
+				13DDB3AD138586A800BEDC8D /* AllScenesViewController.h */,
+				13DDB3AE138586A900BEDC8D /* AllScenesViewController.m */,
+				13DDB3B5138588AE00BEDC8D /* AllScenesViewController.xib */,
+				137AF43A1380097400F41204 /* RootViewController.h */,
+				137AF43B1380097400F41204 /* RootViewController.m */,
+				137AF43D1380097400F41204 /* RootViewController.xib */,
+				139A2AED13819F3C009C860C /* MainPageTableViewController.h */,
+				139A2AEE13819F3C009C860C /* MainPageTableViewController.m */,
+				13CCB2881381BE6D00AB3BA2 /* MainPageTableViewController.xib */,
+				13F92F3B1397CBC9008E2F73 /* SceneMapViewController.h */,
+				13F92F3C1397CBC9008E2F73 /* SceneMapViewController.m */,
+				13F92F3E1397D582008E2F73 /* SceneMapViewController.xib */,
+				13F92F441397E41B008E2F73 /* EventDetailsViewController.h */,
+				13F92F451397E41B008E2F73 /* EventDetailsViewController.m */,
+				13F92F411397E3F2008E2F73 /* EventDetailsViewController.xib */,
+			);
+			name = ui;
+			sourceTree = "<group>";
+		};
+		35ADA37513830A4D0021D5E2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				35ADA379138316210021D5E2 /* Entities */,
+				35ADA36F138307630021D5E2 /* DatabaseFactory.h */,
+				35ADA370138307630021D5E2 /* DatabaseFactory.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		35ADA37613830E010021D5E2 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				35ADA37713830E1A0021D5E2 /* concerts.sqlite */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
+		35ADA379138316210021D5E2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				35ADA37A138316340021D5E2 /* Event.h */,
+				35ADA37B138316340021D5E2 /* Event.m */,
+				3590959C13844101003C7136 /* Scene.h */,
+				3590959D13844101003C7136 /* Scene.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		137AF4201380097300F41204 /* Malmofestivalen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 137AF4581380097400F41204 /* Build configuration list for PBXNativeTarget "Malmofestivalen" */;
+			buildPhases = (
+				137AF41D1380097300F41204 /* Sources */,
+				137AF41E1380097300F41204 /* Frameworks */,
+				137AF41F1380097300F41204 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Malmofestivalen;
+			productName = Malmofestivalen;
+			productReference = 137AF4211380097300F41204 /* Malmofestivalen.app */;
+			productType = "com.apple.product-type.application";
+		};
+		137AF4441380097400F41204 /* MalmofestivalenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 137AF45B1380097400F41204 /* Build configuration list for PBXNativeTarget "MalmofestivalenTests" */;
+			buildPhases = (
+				137AF4401380097400F41204 /* Sources */,
+				137AF4411380097400F41204 /* Frameworks */,
+				137AF4421380097400F41204 /* Resources */,
+				137AF4431380097400F41204 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				137AF44A1380097400F41204 /* PBXTargetDependency */,
+			);
+			name = MalmofestivalenTests;
+			productName = MalmofestivalenTests;
+			productReference = 137AF4451380097400F41204 /* MalmofestivalenTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		137AF4181380097200F41204 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Consulence AB";
+			};
+			buildConfigurationList = 137AF41B1380097200F41204 /* Build configuration list for PBXProject "Malmofestivalen" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 137AF4161380097200F41204;
+			productRefGroup = 137AF4221380097300F41204 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				137AF4201380097300F41204 /* Malmofestivalen */,
+				137AF4441380097400F41204 /* MalmofestivalenTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		137AF41F1380097300F41204 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				137AF4301380097300F41204 /* InfoPlist.strings in Resources */,
+				137AF4391380097400F41204 /* MainWindow.xib in Resources */,
+				137AF43F1380097400F41204 /* RootViewController.xib in Resources */,
+				13CCB28A1381BE6D00AB3BA2 /* MainPageTableViewController.xib in Resources */,
+				13CCB2A21381BEF600AB3BA2 /* arrowroundleft.png in Resources */,
+				13CCB2A31381BEF600AB3BA2 /* arrowroundright.png in Resources */,
+				13CCB2A41381BEF600AB3BA2 /* browser.png in Resources */,
+				13CCB2A51381BEF600AB3BA2 /* cassette.png in Resources */,
+				13CCB2A61381BEF600AB3BA2 /* clock.png in Resources */,
+				13CCB2A71381BEF600AB3BA2 /* facebooklogo.png in Resources */,
+				13CCB2A81381BEF600AB3BA2 /* favoritehelp1.png in Resources */,
+				13CCB2A91381BEF600AB3BA2 /* favoritehelp2.png in Resources */,
+				13CCB2AA1381BEF600AB3BA2 /* globe.png in Resources */,
+				13CCB2AB1381BEF600AB3BA2 /* happyface.png in Resources */,
+				13CCB2AC1381BEF600AB3BA2 /* heart.png in Resources */,
+				13CCB2AD1381BEF600AB3BA2 /* heartoff.png in Resources */,
+				13CCB2AE1381BEF600AB3BA2 /* icon.png in Resources */,
+				13CCB2AF1381BEF600AB3BA2 /* musicnode.png in Resources */,
+				13CCB2B01381BEF600AB3BA2 /* myspace.png in Resources */,
+				13CCB2B11381BEF600AB3BA2 /* normalmapmarker.png in Resources */,
+				13CCB2B21381BEF600AB3BA2 /* question.png in Resources */,
+				13CCB2B31381BEF600AB3BA2 /* search.png in Resources */,
+				13CCB2B41381BEF600AB3BA2 /* specialmapmarker.png in Resources */,
+				13CCB2B51381BEF600AB3BA2 /* spotify.png in Resources */,
+				13CCB2B61381BEF600AB3BA2 /* world.png in Resources */,
+				35ADA37813830E1A0021D5E2 /* concerts.sqlite in Resources */,
+				13DDB3B7138588AE00BEDC8D /* AllScenesViewController.xib in Resources */,
+				13C811D31389766D00E9D226 /* SceneDetailsViewController.xib in Resources */,
+				13F92F401397D582008E2F73 /* SceneMapViewController.xib in Resources */,
+				13F92F431397E3F3008E2F73 /* EventDetailsViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		137AF4421380097400F41204 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				137AF4501380097400F41204 /* InfoPlist.strings in Resources */,
+				137AF4531380097400F41204 /* MalmofestivalenTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		137AF4431380097400F41204 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		137AF41D1380097300F41204 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				137AF4331380097300F41204 /* main.m in Sources */,
+				137AF4361380097300F41204 /* MalmofestivalenAppDelegate.m in Sources */,
+				137AF43C1380097400F41204 /* RootViewController.m in Sources */,
+				139A2AF013819F3C009C860C /* MainPageTableViewController.m in Sources */,
+				35ADA371138307630021D5E2 /* DatabaseFactory.m in Sources */,
+				35ADA37C138316340021D5E2 /* Event.m in Sources */,
+				3590959E13844101003C7136 /* Scene.m in Sources */,
+				13DDB3B0138586A900BEDC8D /* AllScenesViewController.m in Sources */,
+				13C811D01389762400E9D226 /* SceneDetailsViewController.m in Sources */,
+				13F92F3D1397CBCA008E2F73 /* SceneMapViewController.m in Sources */,
+				13F92F461397E41C008E2F73 /* EventDetailsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		137AF4401380097400F41204 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				137AF4551380097400F41204 /* MalmofestivalenTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		137AF44A1380097400F41204 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 137AF4201380097300F41204 /* Malmofestivalen */;
+			targetProxy = 137AF4491380097400F41204 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		137AF42E1380097300F41204 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				137AF42F1380097300F41204 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		137AF4371380097400F41204 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				137AF4381380097400F41204 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		137AF43D1380097400F41204 /* RootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				137AF43E1380097400F41204 /* en */,
+			);
+			name = RootViewController.xib;
+			sourceTree = "<group>";
+		};
+		137AF44E1380097400F41204 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				137AF44F1380097400F41204 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		13C811D11389766C00E9D226 /* SceneDetailsViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13C811D21389766D00E9D226 /* en */,
+			);
+			name = SceneDetailsViewController.xib;
+			sourceTree = "<group>";
+		};
+		13CCB2881381BE6D00AB3BA2 /* MainPageTableViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13CCB2891381BE6D00AB3BA2 /* en */,
+			);
+			name = MainPageTableViewController.xib;
+			sourceTree = "<group>";
+		};
+		13DDB3B5138588AE00BEDC8D /* AllScenesViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13DDB3B6138588AE00BEDC8D /* en */,
+			);
+			name = AllScenesViewController.xib;
+			sourceTree = "<group>";
+		};
+		13F92F3E1397D582008E2F73 /* SceneMapViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13F92F3F1397D582008E2F73 /* en */,
+			);
+			name = SceneMapViewController.xib;
+			sourceTree = "<group>";
+		};
+		13F92F411397E3F2008E2F73 /* EventDetailsViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13F92F421397E3F3008E2F73 /* en */,
+			);
+			name = EventDetailsViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		137AF4561380097400F41204 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Magnus Pettersson (297HZ54665)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F97EE8FA-D994-4382-9506-5236A22EBB86";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		137AF4571380097400F41204 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		137AF4591380097400F41204 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Malmofestivalen/Malmofestivalen-Prefix.pch";
+				INFOPLIST_FILE = "Malmofestivalen/Malmofestivalen-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		137AF45A1380097400F41204 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Malmofestivalen/Malmofestivalen-Prefix.pch";
+				INFOPLIST_FILE = "Malmofestivalen/Malmofestivalen-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		137AF45C1380097400F41204 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Malmofestivalen.app/Malmofestivalen";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MalmofestivalenTests/MalmofestivalenTests-Prefix.pch";
+				INFOPLIST_FILE = "MalmofestivalenTests/MalmofestivalenTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		137AF45D1380097400F41204 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Malmofestivalen.app/Malmofestivalen";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MalmofestivalenTests/MalmofestivalenTests-Prefix.pch";
+				INFOPLIST_FILE = "MalmofestivalenTests/MalmofestivalenTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		137AF41B1380097200F41204 /* Build configuration list for PBXProject "Malmofestivalen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				137AF4561380097400F41204 /* Debug */,
+				137AF4571380097400F41204 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		137AF4581380097400F41204 /* Build configuration list for PBXNativeTarget "Malmofestivalen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				137AF4591380097400F41204 /* Debug */,
+				137AF45A1380097400F41204 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		137AF45B1380097400F41204 /* Build configuration list for PBXNativeTarget "MalmofestivalenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				137AF45C1380097400F41204 /* Debug */,
+				137AF45D1380097400F41204 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 137AF4181380097200F41204 /* Project object */;
+}
