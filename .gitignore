@@ -60,5 +60,6 @@ gen
 local.properties
 .classpath
 R.java
-
+.metadata
+.settings
 out
