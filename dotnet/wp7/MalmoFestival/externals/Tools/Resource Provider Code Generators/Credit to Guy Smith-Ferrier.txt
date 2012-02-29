@@ -1,0 +1,2 @@
+Check out this post on why these are required:
+http://www.guysmithferrier.com/post/2008/09/Silverlight-And-Strongly-Typed-Resource-Classes.aspx

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalmoFestival", "MalmoFestival\MalmoFestival.csproj", "{CEE0BFAD-943D-4430-BCB2-2474499AC6EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CEE0BFAD-943D-4430-BCB2-2474499AC6EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE0BFAD-943D-4430-BCB2-2474499AC6EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE0BFAD-943D-4430-BCB2-2474499AC6EC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CEE0BFAD-943D-4430-BCB2-2474499AC6EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE0BFAD-943D-4430-BCB2-2474499AC6EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE0BFAD-943D-4430-BCB2-2474499AC6EC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

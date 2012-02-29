@@ -1,0 +1,117 @@
+﻿<phone:PhoneApplicationPage 
+	x:Class="MalmoFestival.MainPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+	xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:Command="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WP7"                            
+	xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+	xmlns:helpers="clr-namespace:MalmoFestival.Helpers"     
+    xmlns:my="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps"  
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768" 
+	FontFamily="{StaticResource PhoneFontFamilyNormal}"
+	FontSize="{StaticResource PhoneFontSizeNormal}"
+	Foreground="{StaticResource PhoneForegroundBrush}"
+	SupportedOrientations="Portrait"  Orientation="Portrait"
+	shell:SystemTray.IsVisible="True"
+    DataContext="{Binding MainViewModel, Source={StaticResource ServiceLocator}}"
+    >
+	<phone:PhoneApplicationPage.Resources>
+		<DataTemplate x:Key="MalmoFestival.ViewModels.FavoritesViewModel">
+			<ListBox ItemsSource="{Binding FavoritesCollection}">
+			</ListBox>
+		</DataTemplate>
+		<DataTemplate x:Key="MalmoFestival.ViewModels.EventsViewModel">
+			<ListBox ItemsSource="{Binding EventsCollection}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Button Name="ShowEventDetail">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <Command:EventToCommand Command="{Binding EventsViewModel.ShowEventDetailCommand, Source={StaticResource ServiceLocator}, Mode=OneWay}" CommandParameter="{Binding Id}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                            <Button.Content>
+                                <StackPanel Orientation="Vertical">
+                                        <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Date"></TextBlock>
+                                        <StackPanel Orientation="Horizontal">                                                
+                                            <TextBlock Text="{Binding StartDate}"></TextBlock>
+                                            <TextBlock Text=" - "></TextBlock>
+                                            <TextBlock Text="{Binding EndDate}"></TextBlock>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Title}"></TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Button.Content>
+                    </Button>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+			</ListBox>
+		</DataTemplate>
+        <DataTemplate x:Key="MalmoFestival.ViewModels.UpcomingEventsViewModel">
+            <TextBlock Text="TODO"></TextBlock>
+        </DataTemplate>
+        <DataTemplate x:Key="MalmoFestival.ViewModels.SceneListViewModel">
+            <TextBlock Text="TODO"></TextBlock>
+        </DataTemplate>
+        <DataTemplate x:Key="MalmoFestival.ViewModels.SceneMapViewModel">
+            <Grid x:Name="LayoutRoot" Background="Transparent">
+                <my:Map  Name="Map" CredentialsProvider="{Binding CredentialProvider}"  CopyrightVisibility="Collapsed" LogoVisibility="Collapsed"  Center="{Binding Center, Mode=TwoWay}" ZoomLevel="{Binding Zoom,Mode=TwoWay}" >
+                    <my:MapItemsControl ItemsSource="{Binding MapItems}">
+                        <my:MapItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <my:Pushpin Location="{Binding Location}" Tag="{Binding}" >
+                                    <Image  Source="{Binding Icon}" />
+                                </my:Pushpin>
+                            </DataTemplate>
+                        </my:MapItemsControl.ItemTemplate>
+                    </my:MapItemsControl>
+                </my:Map>
+            </Grid>
+        </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
+	<!--LayoutRoot is the root grid where all page content is placed-->
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		<!--Pivot Control-->
+		<controls:Pivot 
+			Title="{Binding ApplicationTitle, Source={StaticResource StringResources}}" 
+			ItemsSource="{Binding PageCollection}"
+			HorizontalContentAlignment="Stretch" 
+			VerticalContentAlignment="Stretch" 
+			>
+			<controls:Pivot.HeaderTemplate>
+				<DataTemplate>
+					<Grid x:Name="grid">
+						<TextBlock TextWrapping="Wrap"
+								   Text="{Binding TitleText}"
+								   d:LayoutOverrides="Width, Height" />
+					</Grid>
+				</DataTemplate>
+			</controls:Pivot.HeaderTemplate>
+			<controls:Pivot.ItemTemplate>
+				<DataTemplate>
+					<helpers:DataTemplateSelector Content="{Binding}" />
+				</DataTemplate>
+			</controls:Pivot.ItemTemplate>
+		</controls:Pivot>
+	</Grid>
+ 
+	<!--Sample code showing usage of ApplicationBar-->
+	<!--<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+			<shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+			<shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+			<shell:ApplicationBar.MenuItems>
+				<shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+				<shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+			</shell:ApplicationBar.MenuItems>
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CEE0BFAD-943D-4430-BCB2-2474499AC6EC}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MalmoFestival</RootNamespace>
+    <AssemblyName>MalmoFestival</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>MalmoFestival.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>MalmoFestival.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Community.CsharpSqlite.SqlLiteClient.WP7, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\externals\Community.CsharpSqlite.SqlLiteClient.WP7.dll</HintPath>
+    </Reference>
+    <Reference Include="Community.CsharpSqlite.WP7, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\externals\Community.CsharpSqlite.WP7.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras.WP7">
+      <HintPath>..\packages\MvvmLight.3.0.2\lib\sl3-wp\GalaSoft.MvvmLight.Extras.WP7.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.WP7">
+      <HintPath>..\packages\MvvmLight.3.0.2\lib\sl3-wp\GalaSoft.MvvmLight.WP7.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Devices.Sensors" />
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls" />
+    <Reference Include="Microsoft.Phone.Controls.Maps, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Newtonsoft.Json.WindowsPhone">
+      <HintPath>..\packages\Newtonsoft.Json.4.0.2\lib\sl3-wp\Newtonsoft.Json.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.2.2.1.4\lib\sl3-wp\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpZipLib.Silverlight4, Version=0.0.0.0, Culture=neutral, PublicKeyToken=a37ef23abf01322c, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\SL4\SharpZipLib.Silverlight4.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\externals\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Device" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Interactivity, Version=3.7.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLight.3.0.2\lib\sl3-wp\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Resources\Labels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Labels.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Category.cs" />
+    <Compile Include="Domain\EventItem.cs" />
+    <Compile Include="Domain\MapItem.cs" />
+    <Compile Include="Domain\Metadata.cs" />
+    <Compile Include="Domain\Scene.cs" />
+    <Compile Include="Extensions\GeoCoordinateExtensions.cs" />
+    <Compile Include="Extensions\SQLiteExtensions.cs" />
+    <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="Helpers\DataTemplateSelector.cs" />
+    <Compile Include="Helpers\DependencyObjectExtensions.cs" />
+    <Compile Include="Helpers\EventArgs.cs" />
+    <Compile Include="Helpers\EventHandlerExtensions.cs" />
+    <Compile Include="Helpers\IsolatedStorageHelper.cs" />
+    <Compile Include="IoC\Module.cs" />
+    <Compile Include="IoC\ServiceLocator.cs" />
+    <Compile Include="Repositories\DbHelper.cs" />
+    <Compile Include="Repositories\Fake\EventRepositoryFake.cs" />
+    <Compile Include="Repositories\IEventRepository.cs" />
+    <Compile Include="Repositories\IMetadataRepository.cs" />
+    <Compile Include="Repositories\Impl\EventRepository.cs" />
+    <Compile Include="Repositories\Impl\MetadataRepository.cs" />
+    <Compile Include="Repositories\Impl\Repository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Services\Fakes\GeoLocationServiceFake.cs" />
+    <Compile Include="Services\IDownLoadService.cs" />
+    <Compile Include="Services\IGeoLocationService.cs" />
+    <Compile Include="Services\IInitDatabaseService.cs" />
+    <Compile Include="Services\IMapService.cs" />
+    <Compile Include="Services\Impl\DownLoadService.cs" />
+    <Compile Include="Services\Impl\GeoLocationService.cs" />
+    <Compile Include="Services\Impl\InitDatabaseService.cs" />
+    <Compile Include="Services\Impl\MapService.cs" />
+    <Compile Include="Services\Impl\NavigationService.cs" />
+    <Compile Include="Services\Impl\ScenesService.cs" />
+    <Compile Include="Services\INavigationService.cs" />
+    <Compile Include="Services\IScenesService.cs" />
+    <Compile Include="ViewModels\EventDetailsViewModel.cs" />
+    <Compile Include="ViewModels\EventsViewModel.cs" />
+    <Compile Include="ViewModels\FavoritesViewModel.cs" />
+    <Compile Include="ViewModels\MarkerInterfaces.cs" />
+    <Compile Include="ViewModels\PageViewModel.cs" />
+    <Compile Include="ViewModels\SceneListViewModel.cs" />
+    <Compile Include="ViewModels\SceneMapViewModel.cs" />
+    <Compile Include="ViewModels\UpcomingEventsViewModel.cs" />
+    <Compile Include="Views\EventDetails.xaml.cs">
+      <DependentUpon>EventDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IEventsService.cs" />
+    <Compile Include="Services\IFavoritesService.cs" />
+    <Compile Include="Services\Impl\EventsService.cs" />
+    <Compile Include="Services\Impl\FavoritesService.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Views\EventDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="concerts.sqlite" />
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Content\Images\MapItems\scene.png" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Resources\Labels.resx">
+      <Generator>PublicResourceCodeGenerator</Generator>
+      <LastGenOutput>Labels.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>
