@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+	<string name="app_name">Malmöfestivalen 2011</string>
+	<string name="startjustnu">Igangværende og kommende</string>
+	<string name="startkarta">Festivalkort</string>
+	<string name="startscener">Scener / Steder</string>
+	<string name="startfavoriter">Dine favoritter</string>
+	<string name="favoritesnote">Du får en påmindelse 30 minutter inden en favorit starter.</string>
+	<string name="startcounttext">[count] koncerter.</string>
+	<string name="showonmap">Kort</string>
+	<string name="eventfavoriteadded">Eventet er gemt i din favoritliste</string>
+	<string name="eventfavoriteremoved">Eventet er fjernet fra din favoritliste</string>
+	<string name="favoriteshelptext1">Du opretter en favorit ved at klikke på hjertet øverst til højre når du kigger på et event.</string>
+	<string name="favoriteshelptext2">Når hjertet er blåt er eventet tilføjet din favoritliste. Klik på hjertet igen for at fjerne eventet fra favoritlisten.</string>
+	<string name="favoritesnone">Du har ingen favoritter!</string>
+	<string name="mapfollowposition">Følg min position (kræver GPS)</string>
+	<string name="favoritesnoteextended">Du får en påmindelse 30 minutter før en koncert starter uanset om dette program kører eller ej. På den måde slipper du for at bekymre dig over at gå glip af noget, og kan i stedet nyde koncerterne.</string>
+	<string name="startsearchhint">Søg event / artist</string>
+	<string name="startheadertitle">Malmöfestivalen 2011</string>
+	<string name="eventstarts">Starter: </string>
+	<string name="eventends">Slutter: </string>
+	<string name="eventscene">Scene: </string>
+	<string name="eventmore">Mere</string>
+	<string name="eventfavoriteqestionmark">Favorit?</string>
+	<string name="eventfavoriteexclamationmark">Favorit!</string>
+	<string name="startfestivalcountdowntext">Festivalen begynder om [antal] dage. Woohoo!</string>
+	<string name="eventshare">Del</string>
+	<string name="eventsharevia">Del via...</string>
+	<string name="eventsharebody">Jeg tror du vil kunne lide dette event på Malmöfestivalen: [artist]. Sendt fra Malmöfestivalen til Android. Se mere her: [url] </string>
+	<string name="startshareapp">Del denne applikation</string>
+	<string name="startshareappbody">Tryk på dette link i din Android telefon: </string>
+	<string name="back">Tilbage</string>
+	<string name="startsearchnotext">Ingen tekst</string>
+	<string name="aboutapptitle">Om applikationen</string>
+	<string name="aboutapp">Malmöfestivalen 2011 for Android er en mobil mashup. Der gives ingen garanti for at informationerne i applikationen er 100% korrekte eller opdaterede. Brug af applikationen sker på brugerens eget ansvar. Men, selvfølgelig går jeg så langt som muligt, for at applikationen bliver en så god en oplevelse for dig som muligt :o)</string>
+	<string name="aboutdevelopedby">Udviklet af</string>
+	<string name="aboutchrister">Freelance .Net udvikler og konsulent med mere end 10 års erfaring.</string>
+	<string name="aboutthanks">Tak til... </string>
+	<string name="followon">Nyheder på</string>
+	
+	<string name="whatnewtitle">Hvad kan man i 2011?</string>
+	<string name="whatsnewdescription">Vise nuværende og kommende events\n\nFavoritter med påmindelser (gå aldrig glip af din favoritkoncert)\n\nDel events med venner\n\nKort, der viser alle scener og din position\n\nLinks til Malmöfestival sitet (malmofestivalen.se)\n\nSprog: Svensk, Dansk, Engelsk, Tysk.\n\nÅbner Spotify and Youtube apps, hvis installerede.\n\nSe kategorier (koncerter, film, kunst, mode mv.) og events i disse kategorier.\n\nDownload af opdateringer.</string>
+	<string name="menu_entry_show_as_map">Vis på kort</string>
+	<string name="menu_entry_show_as_list">Vis i liste</string>
+	<string name="downloadupdate">Hent opdatering her!</string>
+	<string name="downloadupdatesuccess">Ny information er blevet hentet. Nyd din festival!</string>
+	<string name="startcategories">Kategorier</string>
+	<string name="searchresult">Søgeresultat</string>
+	<string name="startingup">Forbereder app, vent venligst.</string>
+	<string name="pleasewait">Vent venligst...</string>
+
+	<string name="clickmenuforoptions">Tryk Menu for flere muligheder...</string>
+	<string name="importmenutext">Importer \"Ditt program\" from malmofestivalen.se</string>
+</resources>

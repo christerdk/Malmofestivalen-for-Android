@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:padding="0dp"
+    android:fillViewport="true"
+    android:layout_weight="1"
+>
+	<LinearLayout 
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="2dp"
+    android:id="@+id/controls"
+	>
+	<ImageView 
+	    android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+		android:src="@drawable/malmofest_logo"
+		android:scaleType="fitXY"
+		android:adjustViewBounds="true"
+	/>
+		<!-- TextView  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:text="@string/startheadertitle"
+		    android:textColor="#000000"
+		    android:textSize="24dp"
+		    android:paddingBottom="10dp"
+		    /-->
+	<LinearLayout 
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+		android:gravity="center_vertical"
+		android:paddingTop="10dp"
+		android:paddingBottom="5dp"
+		android:id="@+id/rightnow"
+	    android:clickable="true"
+	    android:focusable="true"
+	    android:focusableInTouchMode="true"
+		>
+
+	<ImageView
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+		android:src="@drawable/clock"
+		android:background="#ffffff"
+		/>
+	<TextView  
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content" 
+	    android:text="@string/startjustnu"
+		android:textColor="#000000"
+		android:paddingLeft="10dp"
+		android:layout_weight="1"
+		/>
+				      <ImageView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:src="@drawable/arrowroundright"
+  />
+
+			</LinearLayout>
+<View
+android:layout_width="fill_parent"
+android:layout_height="1dp"
+android:background="#7CCDFF" 
+/>			
+	<LinearLayout 
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+		android:clickable="true"
+		android:gravity="center_vertical"
+		android:paddingTop="5dp"
+		android:paddingBottom="5dp"
+		android:id="@+id/map"
+		>
+				<ImageView
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+					android:src="@drawable/globe"
+					android:background="#ffffff"
+					/>
+				<TextView  
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content" 
+				    android:text="@string/startkarta"
+					android:textColor="#000000"
+					android:paddingLeft="10dp"
+					android:layout_weight="1"
+				    />
+				      <ImageView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:src="@drawable/arrowroundright"
+  />
+
+			</LinearLayout>
+	<View
+android:layout_width="fill_parent"
+android:layout_height="1dp"
+android:background="#7CCDFF" 
+/>
+
+		<LinearLayout
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+		android:clickable="true"
+		android:gravity="center_vertical"
+		android:paddingTop="5dp"
+		android:paddingBottom="5dp"
+		android:id="@+id/categories"
+		>
+				<ImageView
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+					android:src="@drawable/tag"
+					android:background="#ffffff"
+					/>
+				<TextView  
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content" 
+				    android:text="@string/startcategories"
+					android:textColor="#000000"
+					android:paddingLeft="10dp"
+					android:layout_weight="1"
+				    />
+				      <ImageView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:src="@drawable/arrowroundright"
+  />
+			</LinearLayout>
+
+<View
+android:layout_width="fill_parent"
+android:layout_height="1dp"
+android:background="#7CCDFF" 
+/>
+
+		<LinearLayout
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+		android:clickable="true"
+		android:gravity="center_vertical"
+		android:paddingTop="5dp"
+		android:paddingBottom="5dp"
+		android:id="@+id/favorites"
+		>
+				<ImageView
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+					android:src="@drawable/heart"
+					android:background="#ffffff"
+					/>
+				<TextView  
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content" 
+				    android:text="@string/startfavoriter"
+					android:textColor="#000000"
+					android:paddingLeft="10dp"
+					android:layout_weight="1"
+				    />
+				      <ImageView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:src="@drawable/arrowroundright"
+  />
+			</LinearLayout>
+			
+			
+	
+	
+	<View
+android:layout_width="fill_parent"
+android:layout_height="1dp"
+android:background="#7CCDFF" 
+android:visibility="visible"
+/>
+		<LinearLayout
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+		android:clickable="false"
+		android:gravity="center_vertical"
+		android:paddingTop="5dp"
+		android:paddingBottom="5dp"
+		android:id="@+id/search"
+		android:visibility="visible"
+		>
+				<ImageView
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+					android:src="@drawable/search"
+					android:background="#ffffff"
+					android:paddingRight="8dp"
+					/>
+
+				<EditText
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"
+				    android:layout_weight="1"
+				    android:hint="@string/startsearchhint"
+				    android:maxLines="1"
+				    android:maxHeight="8dp"
+					android:inputType="text"	
+					android:id="@+id/startsearchtext"			    
+				/>
+			     <ImageView
+			     android:paddingLeft="10dp"
+		         android:layout_width="wrap_content"
+		         android:layout_height="wrap_content"
+		         android:src="@drawable/arrowroundright"
+		         android:clickable="true"
+		         android:id="@+id/startsearch"
+				 />
+			</LinearLayout>
+
+			
+	<View
+android:layout_width="fill_parent"
+android:layout_height="2dp"
+android:background="#7CCDFF" 
+android:visibility="visible"
+/>		
+
+		<LinearLayout
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+		android:clickable="true"
+		android:gravity="center_vertical"
+		android:paddingTop="5dp"
+		android:paddingBottom="5dp"
+		>
+		<ImageView
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+			android:src="@drawable/happyface"
+			android:background="#ffffff"
+		    android:id="@+id/startshareicon"
+			/>
+		<TextView  
+		    android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content" 
+		    android:text="@string/startshareapp"
+			android:textColor="#000000"
+			android:paddingLeft="10dp"
+			android:id="@+id/startsharetext"
+			android:layout_weight="1"
+			/>
+
+ 		<LinearLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:paddingLeft="10dp"
+	        android:paddingRight="5dp"
+	        android:orientation="vertical"
+		    android:layout_gravity="center_vertical"
+		  	android:id="@+id/facebook"
+		  	android:clickable="true"
+		  	android:visibility="visible"
+
+    	    >
+				<ImageView
+					android:src="@drawable/facebooklogo"
+				  	android:layout_width="wrap_content"
+				  	android:layout_height="25dp"
+				  	android:adjustViewBounds="true"
+				  	android:scaleType="fitXY"
+				/>
+			</LinearLayout>		
+				<LinearLayout
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:paddingLeft="10dp"
+			    android:layout_gravity="center_vertical"
+		        >
+		
+				<ImageView
+					android:src="@drawable/question"
+				  	android:layout_width="wrap_content"
+				  	android:layout_height="25dp"
+				  	android:adjustViewBounds="true"
+				  	android:scaleType="fitXY"
+				  	android:id="@+id/about"
+				  	android:clickable="true"
+				  	android:paddingRight="5dp"
+			/>
+			</LinearLayout>
+ 		 
+ 		 
+			</LinearLayout>
+
+	<LinearLayout
+		android:orientation="horizontal"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+		android:clickable="true"
+		android:gravity="center_vertical"
+		android:paddingTop="5dp"
+		android:paddingBottom="10dp"
+		android:visibility="gone"
+		android:id="@+id/downloadupdate"
+		>
+				<ImageView
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+					android:src="@drawable/cassette"
+					android:background="#ffffff"
+					/>
+				<TextView  
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content" 
+					android:text="@string/downloadupdate"
+					android:textColor="#000000"
+					android:paddingLeft="10dp"
+					android:layout_weight="1"
+				    />
+	  />
+	</LinearLayout>
+				
+			
+	<TextView
+	  android:layout_width="fill_parent"
+	  android:layout_height="fill_parent"
+	  android:text=""
+	  android:id="@+id/startnews"
+	  android:paddingTop="2dp"
+	  android:textColor="#000000"
+	  android:textSize="10dp"
+	  android:paddingBottom="4dp"
+	  android:layout_gravity="center_horizontal"
+	  android:gravity="center_horizontal"
+	  />
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/testbutton"
+		android:text="Press"
+		android:visibility="gone"
+	/>			
+  
+    
+		</LinearLayout>
+</ScrollView>

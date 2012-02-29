@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Malmöfestivalen 2011</string>
+	<string name="startjustnu">Just nu och kommande</string>
+	<string name="startkarta">Festivalkarta</string>
+	<string name="startscener">Scener / Platser</string>
+	<string name="startfavoriter">Dina favoriter</string>
+	<string name="favoritesnote">Du kommer att få en påminnelse 30 minuter innan en favorit börjar.</string>
+	<string name="startcounttext">[count] koncerter.</string>
+	<string name="showonmap">Karta</string>
+	<string name="eventfavoriteadded">Eventet är sparat till din favoritlista</string>
+	<string name="eventfavoriteremoved">Eventet är borttaget från din favoritlista</string>
+	<string name="favoriteshelptext1">Du skapar en favorit genom att klicka på hjärtat överst till höger när du har ett event öppet.</string>
+	<string name="favoriteshelptext2">När hjärtat är blått är eventet inlagd i din lista över favoriter. Klicka på hjärtat igen för att ta bort det från favoriterna. </string>
+	<string name="favoritesnone">Du har inga favoriter!</string>
+	<string name="mapfollowposition">Följ min position (kräver GPS)</string>
+	<string name="favoritesnoteextended">Du får en påminnelse 30 minuter före en konsert börjar oavsett om programmet körs eller ej. Så du slipper oroa dig för att missa något och kan koncentrera dig på att njuta av konserten istället!</string>
+	<string name="startsearchhint">Sök event / artist</string>
+	<string name="startheadertitle">Malmöfestivalen 2011</string>
+	<string name="eventstarts">Börjar: </string>
+	<string name="eventends">Slutar: </string>
+	<string name="eventscene">Scen: </string>
+	<string name="eventmore">Mer</string>
+	<string name="eventfavoriteqestionmark">Favorit?</string>
+	<string name="eventfavoriteexclamationmark">Favorit!</string>
+	<string name="startfestivalcountdowntext">Festivalen börjar om [antal] dagar. Woohoo!</string>
+	<string name="eventshare">Dela</string>
+	<string name="eventsharevia">Dela via...</string>
+	<string name="eventsharebody">Jag tror du vill veta mer om detta event på Malmöfestivalen: [artist]. Skickat från Malmöfestivalen till Android. Se mer här: [url]</string>
+	<string name="startshareapp">Dela denna app</string>
+	<string name="startshareappbody">Klicka på länken i din Android telefon: </string>
+	<string name="back">Tillbaka</string>
+	<string name="startsearchnotext">Ingen tekst</string>
+	<string name="aboutchrister">Frilansande .NET utvecklare och konsult med mer än 10 års erfarenhet.</string>
+	<string name="aboutapp">Malmöfestivalen 2011 för Android är en mobil mashup. Det finns ingen garanti att informationen i applikationen är 100% korrekt eller uppdaterad. Användning av applikationen sker på eget ansvar. Men, självklart gör jag allt jag kan för att applikationen ska fungera så bra som möjligt :o)</string>
+	<string name="aboutapptitle">Om applikationen</string>
+	<string name="aboutdevelopedby">Utvecklat av</string>
+	<string name="aboutthanks">Tack till... </string>
+	<string name="whatsnewshow">true</string>
+	<string name="whatnewtitle">Vad finns i app\'en i 2011?</string>
+	<string name="whatsnewdescription">Visar pågående och kommande events\n\nFavoriter med påminnelser (missa aldrig ett event)\n\nSynka \"Ditt program\" från malmofestivalen.se\n\nDela events med vänner\n\nKarta som visar alla scener och GPS-positionering av användaren\n\nLänkar direkt till Malmöfestivalens site (malmofestivalen.se)\n\nSpråk: Svenska, Danska, Engelska och Tyska.\n\nÖppnar Spotify och Youtube native apps om de finns installerade\n\nBläddra bland festivalens olika typer av events (musik, filmer, konst etc)\n\nLadda ner uppdateringar löpande i appen.</string>
+	<string name="importmenutext">Synka \"Ditt program\" från malmofestivalen.se</string>
+	<string name="importexplanation">
+&lt;b>Vad är det?&lt;/b>\nDenna funktion synkar alla dina programpunkter från \"Ditt program\" på www.malmofestivalen.se&lt;br>&lt;br>
+&lt;b>Hur gör jag?&lt;/b>\nFyll i ditt användarnamn och lösenord som du använder på www.malmofestivalen.se, tryck sedan på \"Import\" knappen.&lt;br>&lt;br>
+&lt;b>Vad händer sen?&lt;/b>\nProgrampunkterna från \"Ditt program\" på www.malmofestivalen.se importeras som favoriter i det här programmet.&lt;br>&lt;br>
+&lt;b>Jag får \"0 nya events importerade\"...&lt;/b>\nDet betyder vanligtvis två olika saker:&lt;br>* Användare eller lösenord är fel&lt;br>* Det finns inga nya events att importera eller de som finns har du redan sparade som favoriter.&lt;br>&lt;br>
+&lt;b>Vad händer med mina existerande favoriter?&lt;/b>\nDina existerande favoriter ändras inte.&lt;br>&lt;br>
+&lt;b>Jag får andra fel...&lt;/b>\nDet här är en ny feature (BETA) och fel kan uppstå. Klicka på facebook ikonen och ge oss din feedback.&lt;br>&lt;br>
+</string>
+	<string name="followon">Nyheter på</string>
+	<string name="menu_entry_show_as_list">Visa som en lista</string>
+	<string name="downloadupdate">Ladda ner uppdatering här!</string>
+	<string name="downloadupdatesuccess">Ny information har laddats ner. Ha en bra festival!</string>
+	<string name="startcategories">Kategorier</string>
+	<string name="searchresult">Sökresultat</string>
+ 	<string name="startingup">Initierar app, vänta ett ögonblick.</string>
+ 	<string name="pleasewait">Vänta...</string>
+ 	<string name="clickmenuforoptions">Tryck på meny för fler alternativ...</string>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Malmöfestivalen 2011</string>
+	<string name="startjustnu">Aktuelle Events</string>
+	<string name="startkarta">Festivalkarte</string>
+	<string name="startscener">Szenen / Plätze</string>
+	<string name="startfavoriter">Deine Favoriten</string>
+	<string name="favoritesnote">Du wirst 30 Min. vor dem Beginn deines Favoritereignisses benachrichtigt.</string>
+	<string name="startcounttext">[count] Konzerte.</string>
+	<string name="showonmap">Karte</string>
+	<string name="eventfavoriteadded">Das Event ist zu deinen Favoriten hinzugefügt</string>
+	<string name="eventfavoriteremoved">Das Event ist von deinen Favoriten entfernt</string>
+	<string name="favoriteshelptext1">Speichere ein Event als dein Favorit indem du auf das Herz oben auf dem aktuellen Event klickst.</string>
+	<string name="favoriteshelptext2">Ist das Herz blau auf dem Event ist das eins deiner Favoriten. Klicke noch einmal darauf um das Event von den Favoriten zu entfernen. </string>
+	<string name="favoritesnone">Du hast keine Favoriten!</string>
+	<string name="mapfollowposition">Folge meiner Position (GPS muss aktiviert sein)</string>
+	<string name="favoritesnoteextended">Du får en påminnelse 30 minuter före en konsert börjar oavsett om programmet körs eller ej. Så du slipper oroa dig för att missa något och kan koncentrera dig på att njuta av konserten istället!</string>
+	<string name="startsearchhint">Sök event / artist</string>
+	<string name="startheadertitle">Malmöfestivalen 2011</string>
+	<string name="eventstarts">Anfang: </string>
+	<string name="eventends">Schluss: </string>
+	<string name="eventscene">Szene: </string>
+	<string name="eventmore">Mehr</string>
+	<string name="eventfavoriteqestionmark">Favorit?</string>
+	<string name="eventfavoriteexclamationmark">Favorit!</string>
+	<string name="startfestivalcountdowntext">Das Festival fängt um [antal] Tage. Woohoo!</string>
+	<string name="eventshare">Weiterleiten</string>
+	<string name="eventsharevia">Weiterleiten an...</string>
+	<string name="eventsharebody">Wir glauben, du willst mehr über dieses Event im Malmöfestival wissen: [artist]. Geschickt von Malmöfestival für Android. Für weitere Info: [url]</string>
+	<string name="startshareapp">Die App weiterleiten</string>
+	<string name="startshareappbody">Klicke auf die Link in deinem Android-telefon: </string>
+	<string name="back">Zurück</string>
+	<string name="startsearchnotext">Kein Text</string>
+	<string name="aboutchrister">Freiberuflicher .NET-Softwareentwickler mit über 10 Jahren Erfahrung</string>
+	<string name="aboutapp">Malmöfestivalen 2011 för Android är en mobil mashup. Det finns ingen garanti att informationen i applikationen är 100% korrekt eller uppdaterad. Användning av applikationen sker på eget ansvar. Men, självklart gör jag allt jag kan för att applikationen ska fungera så bra som möjligt :o)</string>
+	<string name="aboutapptitle">Über die App</string>
+	<string name="aboutdevelopedby">Entwickelt von</string>
+	<string name="aboutthanks">Danke schön an... </string>
+	<string name="whatsnewshow">true</string>
+	<string name="whatnewtitle">Was ist neu in v.[versionname]</string>
+	<string name="whatsnewdescription">* Nachrichten über die Konzerte </string>
+	<string name="importexplanation">
+&lt;b>What is this?&lt;/b>\nThis feature imports all your concerts from \"Ditt program\" on www.malmofestivalen.se&lt;br>&lt;br>
+&lt;b>What do I do?&lt;/b>\nWrite the username and password that you use on www.malmofestivalen.se, and press the \"Import\" button.&lt;br>&lt;br>
+&lt;b>What happens then?&lt;/b>\nThe concerts from \"Ditt program\" on www.malmofestivalen.se gets imported as favorites in this program.&lt;br>&lt;br>
+&lt;b>Why only the concerts?&lt;/b>\nCurrently this program has been made only to display the concerts of www.malmofestivalen.se. All other events in \"Ditt program\" are ignored.&lt;br>&lt;br>
+&lt;b>I get \"0 new events imported\"...&lt;/b>\nThat typically means two different things:&lt;br>* That the entered username or password was incorrect&lt;br>* That there are no new events to import (either there are none or you already have them in this program).&lt;br>&lt;br>
+&lt;b>What about existing favorites?&lt;/b>\nThis feature does not change your existing favorites.&lt;br>&lt;br>
+&lt;b>I get other errors...&lt;/b>\nSorry, can\'t help you there. This is a very new feature (BETA), and errors can occur. Click on the Facebook icon on the start screen to give your feedback.&lt;br>&lt;br>
+&lt;b>Errr... why is this in English?&lt;/b>\nBecause I wanted you to have this feature as fast as possible. :o)
+	</string>
+	<string name="followon">Neues über</string>
+</resources>
+

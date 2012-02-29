@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Malmö festival 2011</string>
+	<string name="startjustnu">Currently showing and upcoming events</string>
+	<string name="startkarta">Festival map</string>
+	<string name="startscener">Scenes / Places</string>
+	<string name="startfavoriter">Your favorites</string>
+	<string name="favoritesnote">You will be notified 30 minutes before start.</string>
+	<string name="startcounttext">[count] concerts.</string>
+	<string name="showonmap">Map</string>
+	<string name="eventfavoriteadded">The event has been added to your favorites</string>
+	<string name="eventfavoriteremoved">The event has been removed from your favorites</string>
+	<string name="favoriteshelptext1">Create a favorite by clicking on the heart in the upper right corner when viewing an event.</string>
+	<string name="favoriteshelptext2">When the heart is blue the event is in your list of favorites. Click on the heart again to remove it from your favorite list.</string>
+	<string name="favoritesnone">You have no favorites!</string>
+	<string name="mapfollowposition">Show my position (requires GPS)</string>
+	<string name="favoritesnoteextended">You will get a reminder 30 minutes before an event starts. This means that you can focus on enjoying the concerts instead of worrying about missing events.</string>
+	<string name="startsearchhint">Search events / artists</string>
+	<string name="startheadertitle">Malmö festival 2011</string>
+	<string name="eventstarts">Starts: </string>
+	<string name="eventends">Ends: </string>
+	<string name="eventscene">Scene: </string>
+	<string name="eventmore">More</string>
+	<string name="eventfavoriteqestionmark">Favorite?</string>
+	<string name="eventfavoriteexclamationmark">Favorite!</string>
+	<string name="startfestivalcountdowntext">The festival starts in [antal] days. Woohoo!</string>
+	<string name="eventshare">Share</string>
+	<string name="eventsharevia">Share using...</string>
+	<string name="eventsharebody">I think you would like this event on the Malmö festival: [artist]. Sent from Malmöfestivalen for Android. See more here: [url]</string>
+	<string name="startshareapp">Share this application</string>
+	<string name="startshareappbody">Click on this link in your Android phone: </string>
+	<string name="back">Back</string>
+	<string name="startsearchnotext">No text</string>
+	<string name="aboutapptitle">About the application</string>
+	<string name="aboutapp">Malmöfestivalen 2011 for Android is a mobile mashup. It therefore cannot be guaranteed that the information contained in the application is 100% correct or up to date. Use of the application is at your own risk. However, as much as possible is being done to make the application as good as possible. :o)</string> 
+	<string name="aboutdevelopedby">Contributors</string>
+	<string name="aboutchrister">Freelance .Net developer and consultant with more than 10 years of experience.</string>
+	<string name="aboutthanks">Thanks to... </string>
+	<string name="followon">News on</string>
+<string name="categories">Categories:</string>
+	<string name="whatsnewshow">true</string>
+	<string name="whatnewtitle">What\'s possible in 2011?</string>
+	<string name="whatsnewdescription">Show current and upcoming events\n\nFavorites with reminders (never miss your favorite event)\n\nSharing events with friends\n\nMap showing all scenes and GPS-positioning of the user\n\nLinks directly to the Malmöfestival site (malmofestivalen.se)\n\nLanguages: Swedish, Danish, English, German.\n\nOpens Spotify and Youtube native apps, if installed.\n\nBrowse festival categories (movies, art, fashion etc.) and events in these categories.\n\nDownload updates continuously in the app.</string>
+	<string name="importmenutext">Import \"Ditt program\" from malmofestivalen.se</string>
+	<string name="importexplanation">
+&lt;b>What is this?&lt;/b>\nThis feature imports all your concerts from \"Ditt program\" on www.malmofestivalen.se&lt;br>&lt;br>
+&lt;b>What do I do?&lt;/b>\nWrite the username and password that you use on www.malmofestivalen.se, and press the \"Import\" button.&lt;br>&lt;br>
+&lt;b>What happens then?&lt;/b>\nThe concerts from \"Ditt program\" on www.malmofestivalen.se gets imported as favorites in this program.&lt;br>&lt;br>
+&lt;b>Why only the concerts?&lt;/b>\nCurrently this program has been made only to display the concerts of www.malmofestivalen.se. All other events in \"Ditt program\" are ignored.&lt;br>&lt;br>
+&lt;b>I get \"0 new events imported\"...&lt;/b>\nThat typically means two different things:&lt;br>* That the entered username or password was incorrect&lt;br>* That there are no new events to import (either there are none or you already have them in this program).&lt;br>&lt;br>
+&lt;b>What about existing favorites?&lt;/b>\nThis feature does not change your existing favorites.&lt;br>&lt;br>
+&lt;b>I get other errors...&lt;/b>\nSorry, can\'t help you there. This is a very new feature (BETA), and errors can occur. Click on the Facebook icon on the start screen to give your feedback.&lt;br>&lt;br>
+&lt;b>Errr... why is this in English?&lt;/b>\nBecause I wanted you to have this feature as fast as possible. :o)
+	</string>
+			
+	<string name="menu_entry_show_as_map">Show as a map</string>
+	<string name="menu_entry_show_as_list">Show as list</string>
+	<string name="downloadupdate">Download update here!</string>
+	<string name="downloadupdatesuccess">New information has been downloaded for you. Enjoy your festival!</string>
+	<string name="startcategories">Categories</string>
+	<string name="searchresult">Search result</string>
+	<string name="startingup">Initializing app, please wait.</string>
+	<string name="pleasewait">Please wait...</string>
+	
+	<string name="developers">
+	&lt;b&gt;Christer Østergaard&lt;/b&gt; &lt;br/&gt;
+	Freelance Software Development Consultant &lt;br/&gt;
+	stratal ApS &lt;br/&gt;
+	&lt;a href=\"http://www.stratal.dk\"&gt;http://www.stratal.dk&lt;/a&gt; &lt;br/&gt;
+	&lt;a href=\"http://twitter.com/christerdk\"&gt;http://twitter.com/christerdk&lt;/a&gt; &lt;br/&gt; &lt;br/&gt;
+	
+	&lt;b>Sebastian Olsson&lt;/b>&lt;br/&gt;
+	Consultant&lt;br/&gt;
+	Epsilon Information Technology&lt;br/&gt; &lt;br/&gt;
+
+	&lt;b&gt;Björn Johansson&lt;/b&gt; &lt;br/&gt;
+	Software developer &lt;br/&gt;
+	tretton37 &lt;br/&gt;
+	&lt;a href=\"http://www.crankingoutcode.com\"&gt;http://www.crankingoutcode.com&lt;/a&gt; &lt;br/&gt;
+	&lt;a href=\"http://twitter.com/bjnjohansson\"&gt;http://twitter.com/bjnjohansson&lt;/a&gt; &lt;br/&gt; &lt;br/&gt;
+
+	&lt;b&gt;Anatoly Mironov&lt;/b&gt; &lt;br/&gt;
+	Bool Nordic AB &lt;br/&gt; &lt;br/&gt;
+
+	&lt;b&gt;Lydia Bernal&lt;/b&gt; &lt;br/&gt;
+	Spanish and EAL teacher &lt;br/&gt;
+	Bladins International School &lt;br/&gt;
+	&lt;a href=\"http://www.lydiabernal.es\"&gt;http://www.lydiabernal.es&lt;/a&gt; &lt;br/&gt; &lt;br/&gt;
+
+	&lt;b&gt;Caroline Schmidt &lt;/b&gt; &lt;br/&gt; 
+	Cybercom Syd AB &lt;br/&gt; &lt;br/&gt;
+	
+	&lt;b&gt;Malmöfestivalen&lt;/b&gt; &lt;br/&gt;
+	Thomas Mårtensson, Lars Krantz och Anna Karlsson.&lt;br/&gt; &lt;br/&gt;
+
+	&lt;b&gt;Projektet&lt;/b&gt; &lt;br/&gt;
+	&lt;a href=\"http://mmm.codeplex.com\"&gt;http://mmm.codeplex.com&lt;/a&gt; &lt;br/&gt;
+	</string>
+	<string name="clickmenuforoptions">Press Menu for more options...</string>
+</resources>

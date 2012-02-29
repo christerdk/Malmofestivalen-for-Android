@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Festival de Malmö 2011</string>
+	<string name="startjustnu">Eventos en curso próximos eventos</string>
+	<string name="startkarta">Mapa del Festival</string>
+	<string name="startscener">Escenarios/ Lugares</string>
+	<string name="startfavoriter">Favoritos</string>
+	<string name="favoritesnote">Aviso 30 minutos antes de que comience un espectáculo.</string>
+	<string name="startcounttext">[count] conciertos.</string>
+	<string name="showonmap">Mapa</string>
+	<string name="eventfavoriteadded">El evento ha sido añadido a tus favoritos</string>
+	<string name="eventfavoriteremoved">El evento ha sido borrado de tus favoritos</string>
+	<string name="favoriteshelptext1">Crea un favorito haciendo click en el corazón situado arriba en la esquina derecha de la pantalla cuando veas un evento que te interese.</string>
+	<string name="favoriteshelptext2">Cuando el corazón está azul el evento está en tu lista de favoritos.Haz click otra vez para eliminarlo de tu lista de favoritos .</string>
+	<string name="favoritesnone"> Ningún favorito</string>
+	<string name="mapfollowposition"> Muéstrame mi posición(requiere GPS)</string>
+	<string name="favoritesnoteextended">Recibirás un aviso 30 minutos antes de que comience un evento.Podrás relajarte y disfrutar de los conciertos sin  preocuparte por si te pierdes alguno.</string>
+	<string name="startsearchhint">Buscar eventos/ artists</string>
+	<string name="startheadertitle">Festival de Malmö 2011</string>
+	<string name="eventstarts">Inicio: </string>
+	<string name="eventends">Fin: </string>
+	<string name="eventscene">Lugar: </string>
+	<string name="eventmore">Más</string>
+	<string name="eventfavoriteqestionmark">¿Favorito?</string>
+	<string name="eventfavoriteexclamationmark">¡Favorito!</string>
+	<string name="startfestivalcountdowntext">El Festival comienza en [antal] días. ¡Yuhuuuu!</string>
+	<string name="eventshare">Compartir</string>
+	<string name="eventsharevia">Opciones en compartidos...</string>
+	<string name="eventsharebody"> Creo que te gustará este evento en el Festival de Malmo: [artista].Enviado desde Malmöfestivalen para Android. Ver más aquí: [url]</string>
+	<string name="startshareapp">Compartir esta aplicación</string>
+	<string name="startshareappbody"> Haz click en este link en tu teléfono Android: </string>
+	<string name="back">Back</string>
+	<string name="startsearchnotext">Sin texto</string>
+	<string name="aboutapptitle">Acerca de la aplicación</string>
+	<string name="aboutapp">Malmöfestivalen 2011 es un proyecto abierto y no puede garantizar que la información contenida en la aplicación sea 100% correcta o actualizada. El uso de la aplicación correrá a cargo del propio usuario.Sin embargo,se ha hecho lo máximo posible a fin de que que la aplicaión funcione lo más correctamente posible. :o)</string> 
+	<string name="aboutdevelopedby">Desarrollada por</string>
+	<string name="aboutchrister">Freelance ,desarrollador de .NET y consultor con más de 10 años de experiencia.</string>
+	<string name="aboutthanks">Agradecimientos... </string>
+	<string name="followon">Síguenos en</string>
+	<string name="categories">Categorías:</string>
+	<string name="whatsnewshow">true</string>
+	<string name="whatnewtitle">Novedades en v.[versionname]</string>
+	<string name="whatsnewdescription">Muestra próximos eventos y eventos en curso\n\nAviso de favoritos (nunca te pierdas tu evento favorito)\n\nCompartir eventos con amigos\n\nMapa con todos los lugares y posición GPS del usuario\n\nLinks directos a a página web del festival de Malmö (malmofestivalen.se)\n\nImportar favoritos del "Ditt program" en malmofestivalen.se\n\nIdiomas: sueco,danés,inglés, alemán, español.\n\nAbre Spotify and Youtube apps. si están instaladas.\n\nExplora las diversas opciones que ofrece el Festival (cine, arte, moda, etc.) y los eventos dentro de cada una de estas categorías.\n\nActualiza continuamente las diferentes aplicaciones.</string>
+			
+	<string name="menu_entry_show_as_map">Mostrar como mapa</string>
+	<string name="menu_entry_show_as_list">Mostar como lista</string>
+	<string name="downloadupdate">¡ Actualiza la aplicación aquí!</string>
+	<string name="downloadupdatesuccess">Una nueva actualización de la aplicaión ha sido realizada.¡Disfrutal del Festival!!</string>
+	<string name="startcategories">Categorías</string>
+	<string name="searchresult">Buscar resultado</string>
+	<string name="startingup">Espera...</string>
+	<string name="pleasewait">Espera...</string>
+	
+</resources>
