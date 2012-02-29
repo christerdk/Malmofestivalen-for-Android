@@ -44,6 +44,8 @@ ElmahLogs/
 .svn
 
 .metadata
+.settings
+
 tmp/**
 .DS_Store
 *.tmp
