@@ -1,0 +1,3 @@
+﻿DROP TABLE IF EXISTS "UpcomingEvents";
+
+CREATE TABLE "UpcomingEvents" ("_id" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , "StartDate" DATETIME NOT NULL , "EndDate" DATETIME NOT NULL , "Title" TEXT, "SceneId" VARCHAR(50), "ScheduleId" VARCHAR(50), "SceneTitle" TEXT);

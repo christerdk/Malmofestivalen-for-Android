@@ -1,0 +1,17 @@
+select events._id as _id, events.Title as EventTitle, events.StartDate as StartDate, scenes.Title as SceneTitle, (strftime('%s','2011-08-19 20:01:00') - strftime('%s', StartDate)) as gnu
+
+ from events left outer join scenes on events.SceneId=scenes.SceneID where 
+(
+StartDate > datetime('2011-08-19 20:01:00', 'localtime') 
+AND
+EndDate > datetime('2011-08-19 20:01:00', 'localtime') 
+)
+OR
+(
+StartDate < datetime('2011-08-19 20:01:00', 'localtime') 
+AND
+EndDate > datetime('2011-08-19 20:01:00', 'localtime')
+AND  (strftime('%s','2011-08-19 20:01:00') - strftime('%s', StartDate)) < 10800
+)
+
+order by SceneTitle,StartDate asc
