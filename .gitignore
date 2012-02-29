@@ -58,7 +58,6 @@ Desktop.ini
 bin
 gen
 local.properties
-*.jar
 .classpath
 R.java
 
