@@ -1,9 +1,0 @@
-Here we develop Malmöfestivalen for Android.
-
-Artifacts - Contains various files, such as pictures and empty databases
-
-dotnet - All .Net code and externals, command line tools and services
-
-Java - Android client code and externals
-
-OsX - iPhone client code
