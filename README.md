@@ -2,11 +2,11 @@ What is Malmöfestivalen for Android?
 ---------------
 Malmöfestivalen is an annual music, culture and food festival taking place in Malmö, Sweden. 
 
-In 2009 the festival had only a web site to provide the festival visitors with information (and a news paper). However, as many events took place in different parts over the city, a local and mobile edition was thought to make a positive addition to the festival experience.
+In 2009 the festival had only a web site to provide the festival visitors with information (and a news paper). However, as many events took place in different parts all over the city, a local and mobile edition was thought to make a positive addition to the festival experience.
 
-The app uses a combination of online and offline storage and therefore navigating the 1000+ events is very fast and fluent, even without connectivity or with unstable mobile reception.
+The app uses a combination of online and offline storage and navigating the 1000+ events is therefore very fast and fluent, even without connectivity or with unstable mobile network connectivity.
 
-The Malmöfestivalen for Android app was first developed and released for the 2010 festival. Since then, the project has been opened up as an open source project in 2011 and is now a community driven project. More people, more features :)
+The Malmöfestivalen for Android app was first developed and released for the 2010 festival. Since then, the project was opened up as an open source project in 2011 and is now a community driven project. More people, more features :)
 
 Current status of the project
 ---------------
@@ -14,9 +14,9 @@ The Malmöfestivalen for Android is stable and released in [Android Market](https
 
 *Got a little time over? Help us make some awesome features so that we can give the users that little extra.* :o)
 
-So how does it look like?
+So what does it look like?
 -
-Here are a few view in the app.
+Here are a few views from the app.
 
 Start view:
 
