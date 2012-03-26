@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Malmö festival 2011</string>
+	<string name="app_name">Malmö festival 2012</string>
 	<string name="startjustnu">Currently showing and upcoming events</string>
 	<string name="startkarta">Festival map</string>
 	<string name="startscener">Scenes / Places</string>
@@ -16,7 +16,7 @@
 	<string name="mapfollowposition">Show my position (requires GPS)</string>
 	<string name="favoritesnoteextended">You will get a reminder 30 minutes before an event starts. This means that you can focus on enjoying the concerts instead of worrying about missing events.</string>
 	<string name="startsearchhint">Search events / artists</string>
-	<string name="startheadertitle">Malmö festival 2011</string>
+	<string name="startheadertitle">Malmö festival 2012</string>
 	<string name="eventstarts">Starts: </string>
 	<string name="eventends">Ends: </string>
 	<string name="eventscene">Scene: </string>
@@ -32,14 +32,14 @@
 	<string name="back">Back</string>
 	<string name="startsearchnotext">No text</string>
 	<string name="aboutapptitle">About the application</string>
-	<string name="aboutapp">Malmöfestivalen 2011 for Android is a mobile mashup. It therefore cannot be guaranteed that the information contained in the application is 100% correct or up to date. Use of the application is at your own risk. However, as much as possible is being done to make the application as good as possible. :o)</string> 
+	<string name="aboutapp">Malmöfestivalen 2012 for Android is a mobile mashup. It therefore cannot be guaranteed that the information contained in the application is 100% correct or up to date. Use of the application is at your own risk. However, as much as possible is being done to make the application as good as possible. :o)</string> 
 	<string name="aboutdevelopedby">Contributors</string>
 	<string name="aboutchrister">Freelance .Net developer and consultant with more than 10 years of experience.</string>
 	<string name="aboutthanks">Thanks to... </string>
 	<string name="followon">News on</string>
 <string name="categories">Categories:</string>
 	<string name="whatsnewshow">true</string>
-	<string name="whatnewtitle">What\'s possible in 2011?</string>
+	<string name="whatnewtitle">What\'s possible in 2012?</string>
 	<string name="whatsnewdescription">Show current and upcoming events\n\nFavorites with reminders (never miss your favorite event)\n\nSharing events with friends\n\nMap showing all scenes and GPS-positioning of the user\n\nLinks directly to the Malmöfestival site (malmofestivalen.se)\n\nLanguages: Swedish, Danish, English, German.\n\nOpens Spotify and Youtube native apps, if installed.\n\nBrowse festival categories (movies, art, fashion etc.) and events in these categories.\n\nDownload updates continuously in the app.</string>
 	<string name="importmenutext">Import \"Ditt program\" from malmofestivalen.se</string>
 	<string name="importexplanation">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Malmöfestivalen 2011</string>
+	<string name="app_name">Malmöfestivalen 2012</string>
 	<string name="startjustnu">Aktuelle Events</string>
 	<string name="startkarta">Festivalkarte</string>
 	<string name="startscener">Szenen / Plätze</string>
@@ -16,7 +16,7 @@
 	<string name="mapfollowposition">Folge meiner Position (GPS muss aktiviert sein)</string>
 	<string name="favoritesnoteextended">Du får en påminnelse 30 minuter före en konsert börjar oavsett om programmet körs eller ej. Så du slipper oroa dig för att missa något och kan koncentrera dig på att njuta av konserten istället!</string>
 	<string name="startsearchhint">Sök event / artist</string>
-	<string name="startheadertitle">Malmöfestivalen 2011</string>
+	<string name="startheadertitle">Malmöfestivalen 2012</string>
 	<string name="eventstarts">Anfang: </string>
 	<string name="eventends">Schluss: </string>
 	<string name="eventscene">Szene: </string>
@@ -32,7 +32,7 @@
 	<string name="back">Zurück</string>
 	<string name="startsearchnotext">Kein Text</string>
 	<string name="aboutchrister">Freiberuflicher .NET-Softwareentwickler mit über 10 Jahren Erfahrung</string>
-	<string name="aboutapp">Malmöfestivalen 2011 för Android är en mobil mashup. Det finns ingen garanti att informationen i applikationen är 100% korrekt eller uppdaterad. Användning av applikationen sker på eget ansvar. Men, självklart gör jag allt jag kan för att applikationen ska fungera så bra som möjligt :o)</string>
+	<string name="aboutapp">Malmöfestivalen 2012 för Android är en mobil mashup. Det finns ingen garanti att informationen i applikationen är 100% korrekt eller uppdaterad. Användning av applikationen sker på eget ansvar. Men, självklart gör jag allt jag kan för att applikationen ska fungera så bra som möjligt :o)</string>
 	<string name="aboutapptitle">Über die App</string>
 	<string name="aboutdevelopedby">Entwickelt von</string>
 	<string name="aboutthanks">Danke schön an... </string>

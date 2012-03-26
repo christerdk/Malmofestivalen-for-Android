@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Festival de Malmö 2011</string>
+	<string name="app_name">Festival de Malmö 2012</string>
 	<string name="startjustnu">Eventos en curso próximos eventos</string>
 	<string name="startkarta">Mapa del Festival</string>
 	<string name="startscener">Escenarios/ Lugares</string>
@@ -16,7 +16,7 @@
 	<string name="mapfollowposition"> Muéstrame mi posición(requiere GPS)</string>
 	<string name="favoritesnoteextended">Recibirás un aviso 30 minutos antes de que comience un evento.Podrás relajarte y disfrutar de los conciertos sin  preocuparte por si te pierdes alguno.</string>
 	<string name="startsearchhint">Buscar eventos/ artists</string>
-	<string name="startheadertitle">Festival de Malmö 2011</string>
+	<string name="startheadertitle">Festival de Malmö 2012</string>
 	<string name="eventstarts">Inicio: </string>
 	<string name="eventends">Fin: </string>
 	<string name="eventscene">Lugar: </string>
@@ -32,7 +32,7 @@
 	<string name="back">Back</string>
 	<string name="startsearchnotext">Sin texto</string>
 	<string name="aboutapptitle">Acerca de la aplicación</string>
-	<string name="aboutapp">Malmöfestivalen 2011 es un proyecto abierto y no puede garantizar que la información contenida en la aplicación sea 100% correcta o actualizada. El uso de la aplicación correrá a cargo del propio usuario.Sin embargo,se ha hecho lo máximo posible a fin de que que la aplicaión funcione lo más correctamente posible. :o)</string> 
+	<string name="aboutapp">Malmöfestivalen 2012 es un proyecto abierto y no puede garantizar que la información contenida en la aplicación sea 100% correcta o actualizada. El uso de la aplicación correrá a cargo del propio usuario.Sin embargo,se ha hecho lo máximo posible a fin de que que la aplicaión funcione lo más correctamente posible. :o)</string> 
 	<string name="aboutdevelopedby">Desarrollada por</string>
 	<string name="aboutchrister">Freelance ,desarrollador de .NET y consultor con más de 10 años de experiencia.</string>
 	<string name="aboutthanks">Agradecimientos... </string>

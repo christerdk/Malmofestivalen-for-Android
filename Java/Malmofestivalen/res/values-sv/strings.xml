@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Malmöfestivalen 2011</string>
+	<string name="app_name">Malmöfestivalen 2012</string>
 	<string name="startjustnu">Just nu och kommande</string>
 	<string name="startkarta">Festivalkarta</string>
 	<string name="startscener">Scener / Platser</string>
@@ -16,7 +16,7 @@
 	<string name="mapfollowposition">Följ min position (kräver GPS)</string>
 	<string name="favoritesnoteextended">Du får en påminnelse 30 minuter före en konsert börjar oavsett om programmet körs eller ej. Så du slipper oroa dig för att missa något och kan koncentrera dig på att njuta av konserten istället!</string>
 	<string name="startsearchhint">Sök event / artist</string>
-	<string name="startheadertitle">Malmöfestivalen 2011</string>
+	<string name="startheadertitle">Malmöfestivalen 2012</string>
 	<string name="eventstarts">Börjar: </string>
 	<string name="eventends">Slutar: </string>
 	<string name="eventscene">Scen: </string>
@@ -32,12 +32,12 @@
 	<string name="back">Tillbaka</string>
 	<string name="startsearchnotext">Ingen tekst</string>
 	<string name="aboutchrister">Frilansande .NET utvecklare och konsult med mer än 10 års erfarenhet.</string>
-	<string name="aboutapp">Malmöfestivalen 2011 för Android är en mobil mashup. Det finns ingen garanti att informationen i applikationen är 100% korrekt eller uppdaterad. Användning av applikationen sker på eget ansvar. Men, självklart gör jag allt jag kan för att applikationen ska fungera så bra som möjligt :o)</string>
+	<string name="aboutapp">Malmöfestivalen 2012 för Android är en mobil mashup. Det finns ingen garanti att informationen i applikationen är 100% korrekt eller uppdaterad. Användning av applikationen sker på eget ansvar. Men, självklart gör jag allt jag kan för att applikationen ska fungera så bra som möjligt :o)</string>
 	<string name="aboutapptitle">Om applikationen</string>
 	<string name="aboutdevelopedby">Utvecklat av</string>
 	<string name="aboutthanks">Tack till... </string>
 	<string name="whatsnewshow">true</string>
-	<string name="whatnewtitle">Vad finns i app\'en i 2011?</string>
+	<string name="whatnewtitle">Vad finns i app\'en i 2012?</string>
 	<string name="whatsnewdescription">Visar pågående och kommande events\n\nFavoriter med påminnelser (missa aldrig ett event)\n\nSynka \"Ditt program\" från malmofestivalen.se\n\nDela events med vänner\n\nKarta som visar alla scener och GPS-positionering av användaren\n\nLänkar direkt till Malmöfestivalens site (malmofestivalen.se)\n\nSpråk: Svenska, Danska, Engelska och Tyska.\n\nÖppnar Spotify och Youtube native apps om de finns installerade\n\nBläddra bland festivalens olika typer av events (musik, filmer, konst etc)\n\nLadda ner uppdateringar löpande i appen.</string>
 	<string name="importmenutext">Synka \"Ditt program\" från malmofestivalen.se</string>
 	<string name="importexplanation">
