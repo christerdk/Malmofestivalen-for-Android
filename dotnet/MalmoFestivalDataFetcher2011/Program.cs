@@ -15,7 +15,7 @@ namespace MalmoFestivalDataFetcher2011
 {
     class Program
     {
-        private static readonly string _baseURI = "http://api.malmofestivalen.se";
+        private static readonly string _baseURI = "http://api2011.malmofestivalen.se";
         private static string _targetDatabasePath;
         private static string[] _args;
         private static string _debugPrefix = "";

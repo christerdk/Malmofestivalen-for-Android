@@ -16,7 +16,7 @@ import java.sql.SQLException;
  */
 public class FestivalDBHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 3;
-    public static final String DATABASE_NAME = "concerts2011.sqlite";
+    public static final String DATABASE_NAME = "concerts2012.sqlite";
     private static FestivalDBHelper sInstance;
 
     /**
