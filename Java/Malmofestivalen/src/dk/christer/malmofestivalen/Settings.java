@@ -4,10 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
-/**
- * @author Anatoly Mironov
- *
- */
+
 public class Settings {
 	private static final String TAG = "Settings";
 	public static final Boolean IsDebug = false; 
