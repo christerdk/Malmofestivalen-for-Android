@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:padding="8px">
+  <ImageView 
+   
+  android:src="@drawable/miljo_colour_android" 
+  android:id="@+id/imageView1" 
+  android:layout_marginTop="4px"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:scaleType="fitXY"
+  android:adjustViewBounds="true"
+  ></ImageView>
+  <TextView android:text="Få påminnelser på SMS och mail - inte böter!"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:textColor="#73A0C1"
+    android:gravity="center_horizontal"
+  />
+</LinearLayout>
