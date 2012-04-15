@@ -22,14 +22,10 @@ namespace MalmoFestivalDataFetcher2011
         private static List<dynamic> ignoredSchedules = new List<dynamic>();
 
 
-        //Expects: 
+        //Expects the following command line arguments during debug-run
         // emptydb:"..\..\..\..\Artifacts\AndroidEmptyDB.sqlite"
         static void Main(string[] args)
         {
-//#if !DEBUG
-//            _debugPrefix = "[Server] ";
-//#endif
-
             _args = args;
             _targetDatabasePath = GetDatabasePath();
             CreateNewDatabase(_targetDatabasePath);
@@ -87,7 +83,7 @@ namespace MalmoFestivalDataFetcher2011
         {
             using (SQLiteCommand reindexCommand = cnn.CreateCommand())
             {
-                reindexCommand.CommandText = "REINDEX actindex; REINDEX actssceneidindex; REINDEX categoryindex; REINDEX sceneidindex; REINDEX scheduleactindex; REINDEX actstocategoriescategoryid; REINDEX actstocategoriesactid;";
+                reindexCommand.CommandText = "REINDEX actindex; REINDEX actstocategoriesactid; REINDEX actstocategoriescategoryid; REINDEX categoryindex; REINDEX sceneidindex; REINDEX scheduleactindex;";
                 reindexCommand.ExecuteNonQuery();
             }
         }
@@ -158,7 +154,7 @@ namespace MalmoFestivalDataFetcher2011
             //Insert act
             using (SQLiteCommand insertCommand = cnn.CreateCommand())
             {
-                insertCommand.CommandText = "INSERT INTO acts (ActId, title, description, SceneId, LinkOriginal, ShortDescription, UriSelf, UriImage) VALUES (@ActId, @title, @description, @SceneId, @LinkOriginal, @ShortDescription, @UriSelf, @UriImage)";
+                insertCommand.CommandText = "INSERT INTO acts (ActId, title, description, SceneId, LinkOriginal, ShortDescription, UriSelf, UriImage, UriSmallImage) VALUES (@ActId, @title, @description, @SceneId, @LinkOriginal, @ShortDescription, @UriSelf, @UriImage, @UriSmallImage)";
                 insertCommand.Parameters.AddWithValue("@ActId", act.Id);
                 insertCommand.Parameters.AddWithValue("@title", _debugPrefix + act.Title);
                 insertCommand.Parameters.AddWithValue("@description", ""); //Todo
@@ -171,8 +167,10 @@ namespace MalmoFestivalDataFetcher2011
                 insertCommand.Parameters.AddWithValue("UriSelf", act.UriSelf.Uri);
 
                 string uriImage = (act.UriMobileImage != null && act.UriMobileImage.UriImage != null) ? act.UriMobileImage.UriImage : "";
-                
                 insertCommand.Parameters.AddWithValue("UriImage", uriImage);
+
+                string uriSmallImage = (act.UriSmallImage != null && act.UriSmallImage.UriImage != null) ? act.UriSmallImage.UriImage : "";
+                insertCommand.Parameters.AddWithValue("UriSmallImage", uriSmallImage);
                 insertCommand.ExecuteNonQuery();
             }
 
