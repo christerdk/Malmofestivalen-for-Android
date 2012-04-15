@@ -7,7 +7,7 @@ import android.util.Log;
 
 public class Settings {
 	private static final String TAG = "Settings";
-	public static final Boolean IsDebug = false; 
+	public static final Boolean IsDebug = true; 
 	private static final String OPT_SCENES = "scenes_representation";
 	public static final String OPT_SCENES_DEFAULT = "map";//opposite = "list"
 	//inspired by:

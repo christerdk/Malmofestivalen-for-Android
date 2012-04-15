@@ -4,7 +4,9 @@
   android:orientation="vertical"
   android:layout_width="wrap_content"
   android:layout_height="wrap_content"
-  android:padding="8px">
+  android:padding="8px"
+  android:id="@+id/miljoparkeringbanner"
+  >
   <ImageView 
    
   android:src="@drawable/miljo_colour_android" 

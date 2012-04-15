@@ -37,6 +37,8 @@ public class CategoriesActivity extends ListActivity {
 		
 		createCategoryList();
 		setTitle(R.string.startcategories);
+		MalmofestivalenSharedActivityFeatures.setMiljoparkeringBannerBehavior(this);
+
 	}
 
 

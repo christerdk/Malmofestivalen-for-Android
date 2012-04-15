@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.Window;
+import android.widget.LinearLayout;
 import dk.christer.malmofestivalen.fragments.CurrentlyShowingFragment;
 
 public class CurrentlyShowingActivity extends FragmentActivity {
@@ -15,6 +16,8 @@ public class CurrentlyShowingActivity extends FragmentActivity {
         setContentView(R.layout.fragmentlayout);
 
         setTitle(R.string.startjustnu);
+        
+        MalmofestivalenSharedActivityFeatures.setMiljoparkeringBannerBehavior(this);
     }
 
 }

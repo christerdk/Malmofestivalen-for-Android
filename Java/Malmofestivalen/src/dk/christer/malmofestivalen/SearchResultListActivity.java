@@ -56,6 +56,7 @@ public class SearchResultListActivity extends ListActivity {
 			performSearch();
 		 }
 		 setTitle(getString(R.string.searchresult) + " - " + _searchString);
+		 MalmofestivalenSharedActivityFeatures.setMiljoparkeringBannerBehavior(this);
 	}
 
 	private void performSearch() {

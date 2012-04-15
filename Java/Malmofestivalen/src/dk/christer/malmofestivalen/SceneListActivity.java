@@ -37,6 +37,7 @@ public class SceneListActivity extends ListActivity {
 		
 		createSceneList();
 		setTitle(R.string.startscener);
+		MalmofestivalenSharedActivityFeatures.setMiljoparkeringBannerBehavior(this);
 
 	}
 
