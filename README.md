@@ -29,6 +29,13 @@ Event detail view:
 Android features (and year implemented)
 -
 
+
+* 2012:
+ * Thumbnail pictures in lists when available.
+ * Option to hide old favorites.
+
+![screencap](http://grab.by/ddxC)
+
 * 2011:
  * Opens Spotify and Youtube native apps, if installed.
  * Browse festival categories (movies, art, fashion etc.) and events in these categories.
