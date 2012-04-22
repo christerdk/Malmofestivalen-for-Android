@@ -10,13 +10,19 @@
   android:paddingLeft="6dp"
   android:paddingRight="6dp"
   
-  android:gravity="center_vertical"
-  >
+  android:gravity="center_vertical" >
+  	<ImageView
+      android:scaleType="centerCrop"
+	  android:layout_width="70dp"
+	  android:layout_height="70dp"
+      android:id="@+id/eventitemrowimage" 
+      android:src="@drawable/question"/>
 	<LinearLayout
 	  xmlns:android="http://schemas.android.com/apk/res/android"
-	  android:layout_width="wrap_content"
+	  android:layout_width="0dip"
 	  android:layout_height="wrap_content"
 	  android:orientation="vertical"
+	  android:paddingLeft="10dp"
 	  android:layout_weight="1"
 	  >
 	  <TextView 
@@ -43,9 +49,8 @@
 		android:textSize="12dp"
 			/>  
 	</LinearLayout>
-	  <ImageView
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:src="@drawable/arrowroundright"
-  />
+	<ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrowroundright"/>
 </LinearLayout>

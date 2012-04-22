@@ -54,6 +54,7 @@ public class EventProvider extends FestivalProvider {
     public static final String EVENT_KEY_BUSINESSID = "BusinessId";
     public static final String EVENT_KEY_SCENETITLE = "SceneTitle";
     public static final String EVENT_KEY_URIIIMAGE = "UriImage";
+    public static final String EVENT_KEY_URISMALLIIMAGE = "UriSmallImage";
 /*    public static final String EVENT_KEY_LINKSPOTIFY = "LinkSpotify";
     public static final String EVENT_KEY_LINKMYSPACE = "LinkMyspace";
 */  
