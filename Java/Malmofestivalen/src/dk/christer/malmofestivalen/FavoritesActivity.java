@@ -7,6 +7,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 
+import org.joda.time.DateTime;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -92,21 +94,21 @@ public class FavoritesActivity extends Activity {
 		super.onStart();
 		HideControl(_listView);
 		HideControl(_nofavorites);
-		new GenerateFavoriteListData().execute((Object[])null);
+		new GenerateFavoriteListData().execute(true);
 	}	
 
-	public class GenerateFavoriteListData extends AsyncTask<Object, Object, ArrayList<HashMap<String, String>>> {
+	public class GenerateFavoriteListData extends AsyncTask<Boolean, Object, ArrayList<HashMap<String, String>>> {
 		
 		@Override
-		protected ArrayList<HashMap<String, String>> doInBackground(Object... params) {
+		protected ArrayList<HashMap<String, String>> doInBackground(Boolean... includeOld) {
 			ArrayList<HashMap<String, String>> favoriteDataResult = new ArrayList<HashMap<String, String>>();
-
-            Cursor favorites = getContentResolver().query(
-                    FavoritesProvider.CONTENT_URI_FAVORITES, null, null, null, null);
-
+			Cursor favorites = getContentResolver().query(FavoritesProvider.CONTENT_URI_FAVORITES, null, null, null, null);
+			
             while (favorites.moveToNext()) {
-                HashMap<String, String> itemMap = CreateMapItem(favorites);
-                favoriteDataResult.add(itemMap);
+                HashMap<String, String> itemMap = CreateMapItem(favorites, includeOld[0]);
+                if (itemMap != null) {
+                	favoriteDataResult.add(itemMap);
+                }
             }
             favorites.close();
 			return favoriteDataResult;
@@ -156,39 +158,32 @@ public class FavoritesActivity extends Activity {
 		}
 	}
 	
-	private HashMap<String, String> CreateMapItem(Cursor favoriteCursor) {
-		HashMap<String, String> item = new HashMap<String, String>();
-        Uri uri = Uri.withAppendedPath(EventProvider.CONTENT_URI_EVENTS_BY_BUSINESS_ID,
-                favoriteCursor.getString(favoriteCursor.getColumnIndex(FavoritesProvider.FAVORITE_KEY_BUSINESSID)));
+	private HashMap<String, String> CreateMapItem(Cursor favoriteCursor, Boolean includeOld) {
+		HashMap<String, String> item = null;
+        Uri uri = Uri.withAppendedPath(EventProvider.CONTENT_URI_EVENTS_BY_BUSINESS_ID, favoriteCursor.getString(favoriteCursor.getColumnIndex(FavoritesProvider.FAVORITE_KEY_BUSINESSID)));
         Cursor event = getContentResolver().query(uri, null, null, null, null);
 
 		int scenId = 0;
-		
-
 		if (event != null) { 
 			if (event.moveToNext()) {
-				scenId = event.getInt(event.getColumnIndex(EventProvider.EVENT_KEY_SCENEID));
-				item.put("_id", Integer.toString(event.getInt(event.getColumnIndex(BaseColumns._ID))));
-				item.put("title", event.getString(event.getColumnIndex(EventProvider.EVENT_KEY_TITLE)));
-				item.put("scen", event.getString(event.getColumnIndex(EventProvider.EVENT_KEY_SCENETITLE)));
-				
-				String dateString = DateHelper.createShortDateResume(event.getString(event.getColumnIndex(EventProvider.EVENT_KEY_STARTDATE)), event.getString(event.getColumnIndex(EventProvider.EVENT_KEY_ENDDATE)));
+				String endDate = event.getString(event.getColumnIndex(EventProvider.EVENT_KEY_ENDDATE));
 
-				item.put("time", dateString);
+				if (includeOld || DateHelper.AsDate(endDate).isAfterNow()) {
+					item = new HashMap<String, String>();
+					
+					scenId = event.getInt(event.getColumnIndex(EventProvider.EVENT_KEY_SCENEID));
+					
+					item.put("_id", Integer.toString(event.getInt(event.getColumnIndex(BaseColumns._ID))));
+					item.put("title", event.getString(event.getColumnIndex(EventProvider.EVENT_KEY_TITLE)));
+					item.put("scen", event.getString(event.getColumnIndex(EventProvider.EVENT_KEY_SCENETITLE)));
+					
+					String dateString = DateHelper.createShortDateResume(event.getString(event.getColumnIndex(EventProvider.EVENT_KEY_STARTDATE)), event.getString(event.getColumnIndex(EventProvider.EVENT_KEY_ENDDATE)));
+		
+					item.put("time", dateString);
+				}
 			}
 			event.close();
 		}
-
-     /*   Cursor scen = getContentResolver().query(
-                Uri.withAppendedPath(SceneProvider.CONTENT_URI_SCENES_BY_ROW_ID, String.valueOf(scenId)),
-                null, null, null, null);
-		if (scen != null) {
-			if (scen.moveToNext()) 
-			{
-				item.put("scen", scen.getString(event.getColumnIndex(SceneProvider.KEY_TITLE)));
-			}
-			scen.close();
-		}*/
 		return item;
 	}
 }

@@ -1,9 +1,12 @@
 package dk.christer.malmofestivalen.helpers;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+
+import org.joda.time.DateTime;
 
 import android.text.format.DateUtils;
 
@@ -12,6 +15,12 @@ public class DateHelper {
 	static DateFormat iso8601Format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	static DateFormat simpleHourFormat = new SimpleDateFormat("HH:mm");
 	static DateFormat shortday = new SimpleDateFormat("d");
+
+	public static DateTime AsDate(String dateString) {
+		DateTime date = DateTime.parse(dateString);
+		return date;
+	}
+
 	
 	public static String createShortDateResume(String startDateString, String endDateString) 
 	{
