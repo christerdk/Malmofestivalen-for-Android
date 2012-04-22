@@ -7,17 +7,20 @@ import java.util.Calendar;
 import java.util.Date;
 
 import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.ISODateTimeFormat;
 
 import android.text.format.DateUtils;
 
 public class DateHelper {
 
-	static DateFormat iso8601Format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	static String iso = "yyyy-MM-dd HH:mm:ss";
+	static DateFormat iso8601Format = new SimpleDateFormat(iso);
 	static DateFormat simpleHourFormat = new SimpleDateFormat("HH:mm");
 	static DateFormat shortday = new SimpleDateFormat("d");
 
 	public static DateTime AsDate(String dateString) {
-		DateTime date = DateTime.parse(dateString);
+		DateTime date = DateTime.parse(dateString, DateTimeFormat.forPattern(iso));
 		return date;
 	}
 

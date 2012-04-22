@@ -46,9 +46,12 @@ public class FavoritesActivity extends Activity {
 	ListView _listView;
 	ScrollView _nofavorites; 
 	
+	MenuItem _favoritesAll;
+	MenuItem _favoritesFuture;
+	String _currentListViewType; 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.favorites);
@@ -70,13 +73,44 @@ public class FavoritesActivity extends Activity {
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, 1, 0, R.string.importmenutext);
+		menu.add(0, 0, 0, R.string.importmenutext);
+		_favoritesAll = menu.add(0, 1, 0, R.string.favorites_all);
+		_favoritesFuture = menu.add(0, 2, 0, R.string.favorites_future);
+		MenuItemVisibilityState();
 		return super.onCreateOptionsMenu(menu);
+	}
+
+	private void MenuItemVisibilityState() {
+		if (Settings.getWantedFavoritesList(this) == Settings.FAVORITES_ALL) {
+			_favoritesAll.setVisible(false);
+			_favoritesFuture.setVisible(true);
+		}
+		else {
+			_favoritesAll.setVisible(true);
+			_favoritesFuture.setVisible(false);
+		}
+
 	}
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		startActivity(new Intent(FavoritesActivity.this, ImportActivity.class));
+
+		switch (item.getItemId()) {
+		case 0:
+			startActivity(new Intent(FavoritesActivity.this, ImportActivity.class));
+			break;
+		case 1:
+			Settings.saveWantedFavoritesList(this, Settings.FAVORITES_ALL);
+			BindList();
+			break;
+		case 2:
+			Settings.saveWantedFavoritesList(this, Settings.FAVORITES_FUTURE);
+			BindList();
+			break;
+		default:
+			break;
+		}
+		
 		return super.onOptionsItemSelected(item);
 	}
 	
@@ -90,12 +124,20 @@ public class FavoritesActivity extends Activity {
 	
 	@Override
 	protected void onStart() {
-		// TODO Auto-generated method stub
 		super.onStart();
 		HideControl(_listView);
 		HideControl(_nofavorites);
-		new GenerateFavoriteListData().execute(true);
-	}	
+		BindList();
+	}
+	
+	private void BindList() {
+		GenerateFavoriteListData listGenerator = new GenerateFavoriteListData();
+		if (Settings.getWantedFavoritesList(this) == Settings.FAVORITES_ALL) {
+			listGenerator.execute(true);
+		} else {
+			listGenerator.execute(false);
+		}
+	}
 
 	public class GenerateFavoriteListData extends AsyncTask<Boolean, Object, ArrayList<HashMap<String, String>>> {
 		
@@ -116,7 +158,6 @@ public class FavoritesActivity extends Activity {
 		}
 		@Override
 		protected void onPostExecute(ArrayList<HashMap<String, String>> result) {
-			// TODO Auto-generated method stub
 			super.onPostExecute(result);
 			_favoriteData = result;
 			
@@ -138,7 +179,6 @@ public class FavoritesActivity extends Activity {
 		
 		@Override
 		protected void onPreExecute() {
-			// TODO Auto-generated method stub
 			super.onPreExecute();
 			setProgressBarIndeterminateVisibility(true);
 			ListView listView = (ListView)findViewById(R.id.favoritelist);
@@ -163,16 +203,11 @@ public class FavoritesActivity extends Activity {
         Uri uri = Uri.withAppendedPath(EventProvider.CONTENT_URI_EVENTS_BY_BUSINESS_ID, favoriteCursor.getString(favoriteCursor.getColumnIndex(FavoritesProvider.FAVORITE_KEY_BUSINESSID)));
         Cursor event = getContentResolver().query(uri, null, null, null, null);
 
-		int scenId = 0;
-		if (event != null) { 
+        if (event != null) { 
 			if (event.moveToNext()) {
 				String endDate = event.getString(event.getColumnIndex(EventProvider.EVENT_KEY_ENDDATE));
-
 				if (includeOld || DateHelper.AsDate(endDate).isAfterNow()) {
 					item = new HashMap<String, String>();
-					
-					scenId = event.getInt(event.getColumnIndex(EventProvider.EVENT_KEY_SCENEID));
-					
 					item.put("_id", Integer.toString(event.getInt(event.getColumnIndex(BaseColumns._ID))));
 					item.put("title", event.getString(event.getColumnIndex(EventProvider.EVENT_KEY_TITLE)));
 					item.put("scen", event.getString(event.getColumnIndex(EventProvider.EVENT_KEY_SCENETITLE)));
