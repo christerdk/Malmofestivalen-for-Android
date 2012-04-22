@@ -169,6 +169,7 @@ public class FavoritesActivity extends Activity {
 			
 			if (_favoriteData.size() > 0) {
 				ShowControl(_listView);
+				HideControl(_nofavorites);
 				SimpleAdapter adapter = new SimpleAdapter(FavoritesActivity.this, 
 						_favoriteData,
 						R.layout.eventitemrow,
@@ -179,6 +180,7 @@ public class FavoritesActivity extends Activity {
 			}
 			else {
 				ShowControl(_nofavorites);
+				HideControl(_listView);
 			}
 			setProgressBarIndeterminateVisibility(false);
 		}
