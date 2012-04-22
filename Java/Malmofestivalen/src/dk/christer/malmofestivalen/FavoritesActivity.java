@@ -91,6 +91,12 @@ public class FavoritesActivity extends Activity {
 		}
 
 	}
+
+	@Override
+	public void onOptionsMenuClosed(Menu menu) {
+		super.onOptionsMenuClosed(menu);
+		MenuItemVisibilityState();
+	}
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
