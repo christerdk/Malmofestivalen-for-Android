@@ -15,7 +15,7 @@ namespace MalmoFestivalDataFetcher2011
 {
     class Program
     {
-        private static readonly string _baseURI = "http://api2011.malmofestivalen.se";
+        private static readonly string _baseURI = "http://api.malmofestivalen.se";
         private static string _targetDatabasePath;
         private static string[] _args;
         private static string _debugPrefix = "";
@@ -110,7 +110,7 @@ namespace MalmoFestivalDataFetcher2011
         {
             using (SQLiteCommand deleteCommand = cnn.CreateCommand())
             {
-                deleteCommand.CommandText = "delete from categories where CategoryId in (SELECT categories .CategoryId from categories where (SELECT count(*) FROM actstocategories where actstocategories.CategoryId = categories.CategoryId) = 0)";
+                deleteCommand.CommandText = "delete from categories where CategoryId in (SELECT categories.CategoryId from categories where (SELECT count(*) FROM actstocategories where actstocategories.CategoryId = categories.CategoryId) = 0)";
                 deleteCommand.ExecuteNonQuery();
             }
         }
@@ -331,7 +331,7 @@ namespace MalmoFestivalDataFetcher2011
             dynamic jsonacts = GetDataFromUrl(_baseURI + "/json/act");
 
 #if DEBUG
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 20; i++)
             {
                 dynamic act = GetDataFromUrl(_baseURI + HttpUtility.UrlDecode(jsonacts[i].Uri));
                 acts.Add(act);
