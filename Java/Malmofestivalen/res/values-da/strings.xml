@@ -52,4 +52,8 @@
 
 	<string name="clickmenuforoptions">Tryk Menu for flere muligheder...</string>
 	<string name="importmenutext">Importer \"Ditt program\" from malmofestivalen.se</string>
+
+  <string name="favorites_all">Vis alle</string>
+  <string name="favorites_future">Fjern gamle</string>
+
 </resources>

@@ -50,5 +50,8 @@
 	<string name="searchresult">Buscar resultado</string>
 	<string name="startingup">Espera...</string>
 	<string name="pleasewait">Espera...</string>
-	
+  
+  <string name="favorites_all">Mostrar todos</string>
+  <string name="favorites_future">Ocultar antigüos</string>
+
 </resources>
