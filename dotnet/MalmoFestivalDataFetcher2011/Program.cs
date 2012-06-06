@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Web.Script.Serialization;
@@ -10,6 +11,7 @@ using System.Reflection;
 using System.IO;
 using System.Data.Common;
 using System.Data.SQLite;
+using Amazon.SimpleEmail.Model;
 
 namespace MalmoFestivalDataFetcher2011
 {
@@ -18,6 +20,7 @@ namespace MalmoFestivalDataFetcher2011
         private static readonly string _baseURI = "http://api.malmofestivalen.se";
         private static string _targetTempDatabasePath;
         private static string _targetDatabasePath;
+        private static StringBuilder _log = new StringBuilder();
         private static string[] _args;
         private static string _debugPrefix = "";
         private static List<dynamic> ignoredSchedules = new List<dynamic>();
@@ -28,48 +31,82 @@ namespace MalmoFestivalDataFetcher2011
         // destination:[path] - optional filepath for the final DB to be copied to
         static void Main(string[] args)
         {
-            _args = args;
-            _targetTempDatabasePath = GetTempDatabasePath();
-            _targetDatabasePath = GetTargetDatabasePath();
-            CreateNewDatabase(_targetTempDatabasePath);
-
-            List<dynamic> categories = new List<dynamic>();
-            LoadAllCategories(categories);
-
-            List<dynamic> places = new List<dynamic>();
-            LoadAllPlaces(places);
-
-            List<dynamic> acts = new List<dynamic>();
-            LoadAllActs(acts);
-
-            using (SQLiteConnection cnn = new SQLiteConnection("Data Source=\"" + _targetTempDatabasePath + "\""))
+            try
             {
-                cnn.Open();
+                _args = args;
+                _targetTempDatabasePath = GetTempDatabasePath();
+                _targetDatabasePath = GetTargetDatabasePath();
+                CreateNewDatabase(_targetTempDatabasePath);
 
-                SaveCategoriesToDB(cnn, categories);
-                SavePlacesToDB(cnn, places);
-                SaveActsToDatabase(cnn, acts, places, categories);
-                DeleteUnusedCategories(cnn);
-                DeleteUnusedScenes(cnn);
-                Reindex(cnn);
-                SetMetadata("version", DateTime.Now.Ticks.ToString(), cnn);
-                CompactDatabase(cnn);
+                List<dynamic> categories = new List<dynamic>();
+                LoadAllCategories(categories);
 
-                cnn.Close();
-            }
-            RenameTempDBToProdDB();
-            CopyToDestination();
+                List<dynamic> places = new List<dynamic>();
+                LoadAllPlaces(places);
 
-            if (ignoredSchedules.Count > 0)
-            {
-                Console.WriteLine("IGNORED SCHEDULES:");
-                foreach (var schedule in ignoredSchedules)
+                List<dynamic> acts = new List<dynamic>();
+                LoadAllActs(acts);
+
+                using (SQLiteConnection cnn = new SQLiteConnection("Data Source=\"" + _targetTempDatabasePath + "\""))
                 {
-                    Console.WriteLine(schedule.ToString());
+                    cnn.Open();
+
+                    SaveCategoriesToDB(cnn, categories);
+                    SavePlacesToDB(cnn, places);
+                    SaveActsToDatabase(cnn, acts, places, categories);
+                    DeleteUnusedCategories(cnn);
+                    DeleteUnusedScenes(cnn);
+                    Reindex(cnn);
+                    SetMetadata("version", DateTime.Now.Ticks.ToString(), cnn);
+                    CompactDatabase(cnn);
+
+                    cnn.Close();
                 }
+                RenameTempDBToProdDB();
+                CopyToDestination();
+
+                if (ignoredSchedules.Count > 0)
+                {
+                    Write("IGNORED SCHEDULES:");
+                    foreach (var schedule in ignoredSchedules)
+                    {
+                        Write(schedule.ToString());
+                    }
+                }
+                SendMail("MMMOS Import successfully completed on " + DateTime.Now.ToLongDateString(), _log.ToString().Replace(Environment.NewLine, "<br/>"));
             }
+            catch (Exception ex)
+            {
+                SendMail("MMMOS Import Error on " + DateTime.Now.ToLongDateString(), 
+                    ex.Message + "<br/><br/>" +
+                    ex.StackTrace.Replace(Environment.NewLine, "<br/>") + "<br/><br/>" +
+                    _log.ToString().Replace(Environment.NewLine, "<br/>")
+                    );
+                throw;
+            }
+        }
 
+        private static void Write(string message)
+        {
+            Console.WriteLine(message);
+            if (!String.IsNullOrWhiteSpace(message))
+            {
+                _log.AppendLine(DateTime.Now.ToLongTimeString() + ": " + message);
+            }
+            else
+            {
+                _log.AppendLine();
+            }
+        }
 
+        private static void SendMail(string subject, string body)
+        {
+            var reportemail = ConfigurationManager.AppSettings["mfest.import.reportemail"];
+            if (String.IsNullOrWhiteSpace(reportemail))
+            {
+                throw new ConfigurationException("mfest.import.reportemail not found in appSettings.");
+            }
+            Send(reportemail.Split(',').ToList(), "mmmos@christer.dk", subject, body);
         }
 
         private static string GetTargetDatabasePath()
@@ -82,6 +119,10 @@ namespace MalmoFestivalDataFetcher2011
             var destination = GetDestination();
             if (!String.IsNullOrWhiteSpace(destination))
             {
+                if (File.Exists(destination))
+                {
+                    File.Delete(destination);
+                }
                 File.Copy(_targetDatabasePath, destination);
             }
         }
@@ -363,7 +404,7 @@ namespace MalmoFestivalDataFetcher2011
             {
                 dynamic act = GetDataFromUrl(_baseURI + HttpUtility.UrlDecode(jsonacts[i].Uri));
                 acts.Add(act);
-                Console.WriteLine(string.Format("{0}: {1}", act.Title, act.Id));
+                Write(string.Format("{0}: {1}", act.Title, act.Id));
                 Thread.Sleep(200); //Be gentle on the server
             }
 #else 
@@ -372,7 +413,7 @@ namespace MalmoFestivalDataFetcher2011
                 //string gnu = HttpUtility.UrlDecode(actSnapshot as string);
                 dynamic act = GetDataFromUrl(_baseURI + actSnapshot.Uri);
                 acts.Add(act);
-                Console.WriteLine(string.Format("{0}: {1}", act.Title, act.Id));
+                Write(string.Format("{0}: {1}", act.Title, act.Id));
                 Thread.Sleep(200); //Be gentle on the server
             }
 #endif
@@ -384,7 +425,7 @@ namespace MalmoFestivalDataFetcher2011
             foreach (var category in jsoncategories)
             {
                 categories.Add(category);
-                Console.WriteLine(string.Format("{0}: {1}", category.CategoryName, category.Id));
+                Write(string.Format("{0}: {1}", category.CategoryName, category.Id));
             }
         }
 
@@ -394,26 +435,51 @@ namespace MalmoFestivalDataFetcher2011
             foreach (var place in jsonplaces)
             {
                 places.Add(place);
-                Console.WriteLine(string.Format("{0}: {1}", place.PlaceName, place.Id));
+                Write(string.Format("{0}: {1}", place.PlaceName, place.Id));
             }
         }
 
         private static dynamic GetDataFromUrl(string url)
         {
-            Console.WriteLine("");
-            Console.WriteLine("Getting URL " + url);
+            Write("");
+            Write("Getting URL " + url);
             WebClient webClient = new WebClient();
             webClient.Encoding = Encoding.UTF8;
             string jsonData = webClient.DownloadString(url);
-            Console.WriteLine("URL result downloaded");
+            Write("URL result downloaded");
 
             JavaScriptSerializer jsonSerializer = new JavaScriptSerializer();
             jsonSerializer.RegisterConverters(new[] { new DynamicJsonConverter() });
 
             dynamic obj = jsonSerializer.Deserialize(jsonData, typeof(object));
-            Console.WriteLine("URL result deserialized");
+            Write("URL result deserialized");
             return obj;
         }
+
+
+        public static string Send(List<string> receivers, string from, string subject, string body)
+        {
+            var client = new Amazon.SimpleEmail.AmazonSimpleEmailServiceClient();
+
+            var mailObj = new SendEmailRequest();
+            var destinationObj = new Destination(receivers);
+            mailObj.Source = from;  //The from email address
+            mailObj.ReturnPath = from; //The email address for bounces
+            mailObj.Destination = destinationObj;
+
+            //Create Message
+            var emailSubjectObj = new Amazon.SimpleEmail.Model.Content(subject);
+            var emailBodyContentObj = new Amazon.SimpleEmail.Model.Content(body);
+
+            var emailBodyObj = new Amazon.SimpleEmail.Model.Body();
+            emailBodyObj.Html = emailBodyContentObj;
+            var emailMessageObj = new Message(emailSubjectObj, emailBodyObj);
+            mailObj.Message = emailMessageObj;
+
+            var response = client.SendEmail(mailObj);
+            return response.SendEmailResult.MessageId;
+        }
+
         #endregion
     }
 }
