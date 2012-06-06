@@ -16,6 +16,7 @@ namespace MalmoFestivalDataFetcher2011
     class Program
     {
         private static readonly string _baseURI = "http://api.malmofestivalen.se";
+        private static string _targetTempDatabasePath;
         private static string _targetDatabasePath;
         private static string[] _args;
         private static string _debugPrefix = "";
@@ -24,11 +25,13 @@ namespace MalmoFestivalDataFetcher2011
 
         //Expects the following command line arguments during debug-run
         // emptydb:"..\..\..\..\Artifacts\AndroidEmptyDB.sqlite"
+        // destination:[path] - optional filepath for the final DB to be copied to
         static void Main(string[] args)
         {
             _args = args;
-            _targetDatabasePath = GetDatabasePath();
-            CreateNewDatabase(_targetDatabasePath);
+            _targetTempDatabasePath = GetTempDatabasePath();
+            _targetDatabasePath = GetTargetDatabasePath();
+            CreateNewDatabase(_targetTempDatabasePath);
 
             List<dynamic> categories = new List<dynamic>();
             LoadAllCategories(categories);
@@ -39,7 +42,7 @@ namespace MalmoFestivalDataFetcher2011
             List<dynamic> acts = new List<dynamic>();
             LoadAllActs(acts);
 
-            using (SQLiteConnection cnn = new SQLiteConnection("Data Source=\"" + _targetDatabasePath + "\""))
+            using (SQLiteConnection cnn = new SQLiteConnection("Data Source=\"" + _targetTempDatabasePath + "\""))
             {
                 cnn.Open();
 
@@ -54,7 +57,8 @@ namespace MalmoFestivalDataFetcher2011
 
                 cnn.Close();
             }
-            RenameTempDBToProdDB(_targetDatabasePath);
+            RenameTempDBToProdDB();
+            CopyToDestination();
 
             if (ignoredSchedules.Count > 0)
             {
@@ -65,7 +69,27 @@ namespace MalmoFestivalDataFetcher2011
                 }
             }
 
-            Console.ReadKey();
+
+        }
+
+        private static string GetTargetDatabasePath()
+        {
+            return GetTempDatabasePath().Replace(".temp", string.Empty);
+        }
+
+        private static void CopyToDestination()
+        {
+            var destination = GetDestination();
+            if (!String.IsNullOrWhiteSpace(destination))
+            {
+                File.Copy(_targetDatabasePath, destination);
+            }
+        }
+
+        private static string GetDestination()
+        {
+            var destinationPath = getArgValue("destination");
+            return destinationPath;
         }
 
         private static void SetMetadata(string key, string data, SQLiteConnection cnn)
@@ -292,7 +316,12 @@ namespace MalmoFestivalDataFetcher2011
         {
             var emptyDbPath = getArgValue("emptydb");
 
-            return emptyDbPath; // Path.Combine(Environment.CurrentDirectory, @"dbs\AndroidEmptyDB.sqlite");
+            if (String.IsNullOrWhiteSpace(emptyDbPath))
+            {
+                throw new ArgumentException("Program expected command line argument emptydb, which was not found.");
+            }
+
+            return emptyDbPath; 
         }
 
         private static string getArgValue(string p)
@@ -304,17 +333,16 @@ namespace MalmoFestivalDataFetcher2011
                     return arg.Replace(p + ":", "");
                 }
             }
-
-            throw new ArgumentException(string.Format("Program expected command line argument {0}, which was not found", p));
+            return null;
         }
 
-        private static void RenameTempDBToProdDB(string path)
+        private static void RenameTempDBToProdDB()
         {
-            File.Copy(path, path.Replace(".temp", ""));
-            File.Delete(path);
+            File.Copy(_targetTempDatabasePath, _targetDatabasePath);
+            File.Delete(_targetTempDatabasePath);
         }
 
-        private static string GetDatabasePath()
+        private static string GetTempDatabasePath()
         {
             return Path.Combine(Environment.CurrentDirectory, GetDatabaseFilename());
         }
