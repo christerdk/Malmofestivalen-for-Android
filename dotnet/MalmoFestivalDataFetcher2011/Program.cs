@@ -33,6 +33,8 @@ namespace MalmoFestivalDataFetcher2011
         {
             try
             {
+                Write("Import begin");
+
                 _args = args;
                 _targetTempDatabasePath = GetTempDatabasePath();
                 _targetDatabasePath = GetTargetDatabasePath();
@@ -73,6 +75,7 @@ namespace MalmoFestivalDataFetcher2011
                         Write(schedule.ToString());
                     }
                 }
+                Write("Import end");
                 SendMail("MMMOS Import successfully completed on " + DateTime.Now.ToLongDateString(), _log.ToString().Replace(Environment.NewLine, "<br/>"));
             }
             catch (Exception ex)
@@ -135,6 +138,8 @@ namespace MalmoFestivalDataFetcher2011
 
         private static void SetMetadata(string key, string data, SQLiteConnection cnn)
         {
+            Write(String.Format("Setting metadata - key {0}, value {1}", key, data));
+
             using (SQLiteCommand metadataCommand = cnn.CreateCommand())
             {
                 metadataCommand.CommandText = "UPDATE DatabaseMeta Set Metadata = @metadata WHERE MetaKey = @metakey";
@@ -146,6 +151,8 @@ namespace MalmoFestivalDataFetcher2011
 
         private static void Reindex(SQLiteConnection cnn)
         {
+            Write("Reindexing temp DB");
+
             using (SQLiteCommand reindexCommand = cnn.CreateCommand())
             {
                 reindexCommand.CommandText = "REINDEX actindex; REINDEX actstocategoriesactid; REINDEX actstocategoriescategoryid; REINDEX categoryindex; REINDEX sceneidindex; REINDEX scheduleactindex;";
@@ -155,6 +162,8 @@ namespace MalmoFestivalDataFetcher2011
 
         private static void DeleteUnusedScenes(SQLiteConnection cnn)
         {
+            Write("Deleting unused scenes");
+         
             using (SQLiteCommand deleteCommand = cnn.CreateCommand())
             {
                 deleteCommand.CommandText = "delete from scenes where scenes.sceneid in (SELECT scenes.SceneId from scenes where (SELECT count(*) FROM events where events.SceneId = scenes.SceneId) = 0)";
@@ -164,6 +173,7 @@ namespace MalmoFestivalDataFetcher2011
 
         private static void CompactDatabase(SQLiteConnection cnn)
         {
+            Write("Compacting temp DB");
             using (SQLiteCommand vacuumCommand = cnn.CreateCommand())
             {
                 vacuumCommand.CommandText = "VACUUM";
@@ -173,6 +183,8 @@ namespace MalmoFestivalDataFetcher2011
 
         private static void DeleteUnusedCategories(SQLiteConnection cnn)
         {
+            Write("Deleting unused categories");
+
             using (SQLiteCommand deleteCommand = cnn.CreateCommand())
             {
                 deleteCommand.CommandText = "delete from categories where CategoryId in (SELECT categories.CategoryId from categories where (SELECT count(*) FROM actstocategories where actstocategories.CategoryId = categories.CategoryId) = 0)";
@@ -379,6 +391,7 @@ namespace MalmoFestivalDataFetcher2011
 
         private static void RenameTempDBToProdDB()
         {
+            Write("Copying to production DB");
             File.Copy(_targetTempDatabasePath, _targetDatabasePath);
             File.Delete(_targetTempDatabasePath);
         }
