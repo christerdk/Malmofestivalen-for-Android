@@ -11,14 +11,14 @@ namespace api.mmmos.se.Controllers
 {
     public class DBController : Controller
     {
-        [OutputCache(VaryByParam = "*", Duration= 10 * 60)]
+
         public ActionResult updatefor(long id)
         {
             string dbPath = Server.MapPath("~/binaries/concerts.sqlite");
 
             if (!System.IO.File.Exists(dbPath))
             {
-                return Json(new { uri = "" }, JsonRequestBehavior.AllowGet);
+                return Json(new { uri = "", error = "Not found: " + dbPath }, JsonRequestBehavior.AllowGet);
             }
             
             var localVersionNumber = GetLocalVersionNumber(dbPath);
@@ -26,9 +26,9 @@ namespace api.mmmos.se.Controllers
             if ((Request.QueryString.Count == 1 && Request.QueryString[0] == "force") || localVersionNumber > id)
             {
                 var dbURI = ConfigurationManager.AppSettings["dbUI"];
-                return Json(new { uri = dbURI }, JsonRequestBehavior.AllowGet);
+                return Json(new { uri = dbURI, localversion = localVersionNumber }, JsonRequestBehavior.AllowGet);
             }
-            return Json(new { uri = "" }, JsonRequestBehavior.AllowGet);
+            return Json(new { uri = "", localversion = localVersionNumber }, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult localversion()

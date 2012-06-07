@@ -1,33 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile publishUrl="C:\development\publish\" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
-    <file relUrl="binaries/concerts.sqlite" publishTime="06/09/2011 18:00:47" />
-    <file relUrl="bin/api.mmmos.se.dll" publishTime="07/27/2011 23:39:17" />
-    <file relUrl="Scripts/MicrosoftAjax.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Scripts/jquery-1.4.4-vsdoc.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Global.asax" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Views/_ViewStart.cshtml" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Scripts/jquery.validate-vsdoc.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Scripts/MicrosoftMvcAjax.debug.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Scripts/MicrosoftMvcValidation.debug.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Views/Shared/Error.cshtml" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Scripts/jquery.validate.min.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Scripts/jquery-1.4.4.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Scripts/jquery.validate.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Scripts/jquery-1.4.4.min.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Scripts/jquery.unobtrusive-ajax.min.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Scripts/MicrosoftMvcValidation.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Scripts/MicrosoftMvcAjax.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Scripts/jquery.validate.unobtrusive.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="bin/binaries/concerts.sqlite" publishTime="06/09/2011 18:00:47" />
-    <file relUrl="Views/Shared/_Layout.cshtml" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Scripts/jquery-ui.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Scripts/jquery-ui.min.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Scripts/MicrosoftAjax.debug.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Scripts/jquery.unobtrusive-ajax.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="bin/api.mmmos.se.pdb" publishTime="07/27/2011 23:39:17" />
-    <file relUrl="Scripts/jquery.validate.unobtrusive.min.js" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Views/Web.config" publishTime="06/09/2011 18:01:06" />
-    <file relUrl="Web.config" publishTime="07/27/2011 23:40:03" />
+  <publishProfile publishUrl="C:\api.mmmos.se" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/Elmah.dll" publishTime="04/23/2012 22:11:09" />
+    <file relUrl="Views/Shared/_Layout.cshtml" publishTime="04/23/2012 22:11:09" />
+    <file relUrl="bin/api.mmmos.se.pdb" publishTime="06/07/2012 18:50:52" />
+    <file relUrl="bin/System.Web.Helpers.xml" publishTime="01/17/2012 08:00:48" />
+    <file relUrl="bin/System.Web.Helpers.dll" publishTime="01/26/2012 18:01:06" />
+    <file relUrl="packages.config" publishTime="04/23/2012 22:11:09" />
+    <file relUrl="Web.config" publishTime="06/07/2012 17:39:37" />
+    <file relUrl="Views/Web.config" publishTime="04/23/2012 22:11:09" />
+    <file relUrl="Views/Shared/Error.cshtml" publishTime="04/23/2012 22:11:09" />
+    <file relUrl="Views/_ViewStart.cshtml" publishTime="04/23/2012 22:11:09" />
+    <file relUrl="Global.asax" publishTime="04/23/2012 22:11:09" />
+    <file relUrl="bin/api.mmmos.se.dll" publishTime="06/07/2012 18:50:52" />
+    <file relUrl="bin/System.Data.SQLite.dll" publishTime="04/23/2012 22:11:09" />
   </publishProfile>
 </publishData>

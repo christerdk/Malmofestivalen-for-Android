@@ -39,7 +39,7 @@ public class DBFileService {
 	
 	private String GetUpdateURI(long currentDBVersion) {
 		try {
-			String jsonResult = JSONLoader.Get("http://api.mmmos.se/db/updatefor/" + Long.toString(currentDBVersion));
+			String jsonResult = JSONLoader.Get("http://api2012.mmmos.se/db/updatefor/" + Long.toString(currentDBVersion));
 			if (jsonResult == null) {
 				return "";
 			}
