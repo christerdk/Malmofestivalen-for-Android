@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">Malmö festival 2012</string>
 	<string name="startjustnu">Currently showing and upcoming events</string>
@@ -69,9 +69,8 @@
 	&lt;a href=\"http://www.stratal.dk\"&gt;http://www.stratal.dk&lt;/a&gt; &lt;br/&gt;
 	&lt;a href=\"http://twitter.com/christerdk\"&gt;http://twitter.com/christerdk&lt;/a&gt; &lt;br/&gt; &lt;br/&gt;
 	
-	&lt;b>Sebastian Olsson&lt;/b>&lt;br/&gt;
-	Consultant&lt;br/&gt;
-	Epsilon Information Technology&lt;br/&gt; &lt;br/&gt;
+	&lt;b&gt;Anatoly Mironov&lt;/b&gt; &lt;br/&gt;
+	Bool Nordic AB &lt;br/&gt; &lt;br/&gt;
 
 	&lt;b&gt;Björn Johansson&lt;/b&gt; &lt;br/&gt;
 	Software developer &lt;br/&gt;
@@ -79,22 +78,9 @@
 	&lt;a href=\"http://www.crankingoutcode.com\"&gt;http://www.crankingoutcode.com&lt;/a&gt; &lt;br/&gt;
 	&lt;a href=\"http://twitter.com/bjnjohansson\"&gt;http://twitter.com/bjnjohansson&lt;/a&gt; &lt;br/&gt; &lt;br/&gt;
 
-	&lt;b&gt;Anatoly Mironov&lt;/b&gt; &lt;br/&gt;
-	Bool Nordic AB &lt;br/&gt; &lt;br/&gt;
-
 	&lt;b&gt;Lydia Bernal&lt;/b&gt; &lt;br/&gt;
 	Spanish and EAL teacher &lt;br/&gt;
-	Bladins International School &lt;br/&gt;
 	&lt;a href=\"http://www.lydiabernal.es\"&gt;http://www.lydiabernal.es&lt;/a&gt; &lt;br/&gt; &lt;br/&gt;
-
-	&lt;b&gt;Caroline Schmidt &lt;/b&gt; &lt;br/&gt; 
-	Cybercom Syd AB &lt;br/&gt; &lt;br/&gt;
-	
-	&lt;b&gt;Malmöfestivalen&lt;/b&gt; &lt;br/&gt;
-	Thomas Mårtensson, Lars Krantz och Anna Karlsson.&lt;br/&gt; &lt;br/&gt;
-
-	&lt;b&gt;Projektet&lt;/b&gt; &lt;br/&gt;
-	&lt;a href=\"http://mmm.codeplex.com\"&gt;http://mmm.codeplex.com&lt;/a&gt; &lt;br/&gt;
 	</string>
 	<string name="clickmenuforoptions">Press Menu for more options...</string>
 	
