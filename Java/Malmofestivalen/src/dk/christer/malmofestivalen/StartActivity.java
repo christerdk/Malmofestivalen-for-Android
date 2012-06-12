@@ -207,10 +207,8 @@ public class StartActivity extends Activity implements OnKeyListener {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				//http://www.facebook.com/pages/Malmofestivalen-mobile-mashup/147655378597283
 				_tracker.trackClick("/click/facebook/start");
-				Intent viewFacebook = new Intent(Intent.ACTION_VIEW, Uri.parse("http://touch.facebook.com/#!/profile.php?id=147655378597283"));
-				                                                                //http://touch.facebook.com/#!/profile.php?id=147655378597283
+				Intent viewFacebook = new Intent(Intent.ACTION_VIEW, Uri.parse("https://touch.facebook.com/profile.php?id=147655378597283"));
 				startActivity(viewFacebook);
 			}
 		});
