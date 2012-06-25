@@ -228,78 +228,92 @@ namespace MalmoFestivalDataFetcher2011
 
         private static void SaveActToDB(dynamic act, SQLiteConnection cnn, List<dynamic> places, List<dynamic> categories)
         {
-            //Insert act
-            using (SQLiteCommand insertCommand = cnn.CreateCommand())
+            try
             {
-                insertCommand.CommandText = "INSERT INTO acts (ActId, title, description, SceneId, LinkOriginal, ShortDescription, UriSelf, UriImage, UriSmallImage) VALUES (@ActId, @title, @description, @SceneId, @LinkOriginal, @ShortDescription, @UriSelf, @UriImage, @UriSmallImage)";
-                insertCommand.Parameters.AddWithValue("@ActId", act.Id);
-                insertCommand.Parameters.AddWithValue("@title", _debugPrefix + act.Title);
-                insertCommand.Parameters.AddWithValue("@description", ""); //Todo
-
-                IEnumerable<dynamic> placeIdList = FindPlaceIdBasedOnURI(act.UriPlace.Uri, places);
-                var placeId = placeIdList.First();
-                insertCommand.Parameters.AddWithValue("@SceneId", placeId);
-                insertCommand.Parameters.AddWithValue("@LinkOriginal", act.UriOnSite);
-                insertCommand.Parameters.AddWithValue("@ShortDescription", act.Preamble);
-                insertCommand.Parameters.AddWithValue("UriSelf", act.UriSelf.Uri);
-
-                string uriImage = (act.UriMobileImage != null && act.UriMobileImage.UriImage != null) ? act.UriMobileImage.UriImage : "";
-                insertCommand.Parameters.AddWithValue("UriImage", uriImage);
-
-                string uriSmallImage = (act.UriSmallImage != null && act.UriSmallImage.UriImage != null) ? act.UriSmallImage.UriImage : "";
-                insertCommand.Parameters.AddWithValue("UriSmallImage", uriSmallImage);
-                insertCommand.ExecuteNonQuery();
-            }
-
-            //Insert schedules for act
-
-
-            foreach (var schedule in act.Schedule)
-            {
+                //Insert act
                 using (SQLiteCommand insertCommand = cnn.CreateCommand())
                 {
-                    if (schedule.StartUTC != null && schedule.EndUTC != null)
+                    insertCommand.CommandText =
+                        "INSERT INTO acts (ActId, title, description, SceneId, LinkOriginal, ShortDescription, UriSelf, UriImage, UriSmallImage) VALUES (@ActId, @title, @description, @SceneId, @LinkOriginal, @ShortDescription, @UriSelf, @UriImage, @UriSmallImage)";
+                    insertCommand.Parameters.AddWithValue("@ActId", act.Id);
+                    insertCommand.Parameters.AddWithValue("@title", _debugPrefix + act.Title);
+                    insertCommand.Parameters.AddWithValue("@description", ""); //Todo
+
+                    IEnumerable<dynamic> placeIdList = FindPlaceIdBasedOnURI(act.UriPlace.Uri, places);
+                    var placeId = placeIdList.First();
+                    insertCommand.Parameters.AddWithValue("@SceneId", placeId);
+                    insertCommand.Parameters.AddWithValue("@LinkOriginal", act.UriOnSite);
+                    insertCommand.Parameters.AddWithValue("@ShortDescription", act.Preamble);
+                    insertCommand.Parameters.AddWithValue("UriSelf", act.UriSelf.Uri);
+
+                    string uriImage = (act.UriMobileImage != null && act.UriMobileImage.UriImage != null)
+                                          ? act.UriMobileImage.UriImage
+                                          : "";
+                    insertCommand.Parameters.AddWithValue("UriImage", uriImage);
+
+                    string uriSmallImage = (act.UriSmallImage != null && act.UriSmallImage.UriImage != null)
+                                               ? act.UriSmallImage.UriImage
+                                               : "";
+                    insertCommand.Parameters.AddWithValue("UriSmallImage", uriSmallImage);
+                    insertCommand.ExecuteNonQuery();
+                }
+
+                //Insert schedules for act
+
+
+                foreach (var schedule in act.Schedule)
+                {
+                    using (SQLiteCommand insertCommand = cnn.CreateCommand())
                     {
-                        insertCommand.CommandText = "INSERT INTO schedules (ActId, StartUTC, EndUTC, FavoriteId) VALUES (@ActId,  @StartUTC, @EndUTC, @FavoriteId)";
+                        if (schedule.StartUTC != null && schedule.EndUTC != null)
+                        {
+                            insertCommand.CommandText =
+                                "INSERT INTO schedules (ActId, StartUTC, EndUTC, FavoriteId) VALUES (@ActId,  @StartUTC, @EndUTC, @FavoriteId)";
+                            insertCommand.Parameters.AddWithValue("@ActId", act.Id);
+                            insertCommand.Parameters.AddWithValue("@StartUTC", schedule.StartUTC);
+                            insertCommand.Parameters.AddWithValue("@EndUTC", schedule.EndUTC);
+                            insertCommand.Parameters.AddWithValue("@FavoriteId", schedule.FavouriteId);
+                            insertCommand.ExecuteNonQuery();
+                        }
+                        else
+                        {
+                            ignoredSchedules.Add(schedule);
+                        }
+                    }
+                }
+
+                //Insert act category relations
+                foreach (var category in act.UriCategories)
+                {
+                    using (SQLiteCommand insertCommand = cnn.CreateCommand())
+                    {
+                        insertCommand.CommandText =
+                            "INSERT INTO actstocategories (ActId, CategoryId) VALUES (@ActId, @CategoryId)";
                         insertCommand.Parameters.AddWithValue("@ActId", act.Id);
-                        insertCommand.Parameters.AddWithValue("@StartUTC", schedule.StartUTC);
-                        insertCommand.Parameters.AddWithValue("@EndUTC", schedule.EndUTC);
-                        insertCommand.Parameters.AddWithValue("@FavoriteId", schedule.FavouriteId);
+
+                        IEnumerable<dynamic> categoryIdList = FindCategoryIdBasedOnURI(category.Uri, categories);
+                        var categoryId = categoryIdList.First();
+                        insertCommand.Parameters.AddWithValue("@CategoryId", categoryId);
                         insertCommand.ExecuteNonQuery();
                     }
-                    else
+                }
+
+                //Insert act links
+                foreach (var link in act.UriExternalLinks)
+                {
+                    using (SQLiteCommand insertCommand = cnn.CreateCommand())
                     {
-                        ignoredSchedules.Add(schedule);
+                        insertCommand.CommandText = "INSERT INTO links (ActId, URI) VALUES (@ActId, @URI)";
+                        insertCommand.Parameters.AddWithValue("@ActId", act.Id);
+                        insertCommand.Parameters.AddWithValue("@URI", link.Uri);
+                        //insertCommand.Parameters.AddWithValue("@URI", link.Name);Add this at later stage...
+                        insertCommand.ExecuteNonQuery();
                     }
                 }
             }
-
-            //Insert act category relations
-            foreach (var category in act.UriCategories)
+            catch (Exception ex )
             {
-                using (SQLiteCommand insertCommand = cnn.CreateCommand())
-                {
-                    insertCommand.CommandText = "INSERT INTO actstocategories (ActId, CategoryId) VALUES (@ActId, @CategoryId)";
-                    insertCommand.Parameters.AddWithValue("@ActId", act.Id);
-
-                    IEnumerable<dynamic> categoryIdList = FindCategoryIdBasedOnURI(category.Uri, categories);
-                    var categoryId = categoryIdList.First();
-                    insertCommand.Parameters.AddWithValue("@CategoryId", categoryId);
-                    insertCommand.ExecuteNonQuery();
-                }
-            }
-
-            //Insert act links
-            foreach (var link in act.UriExternalLinks)
-            {
-                using (SQLiteCommand insertCommand = cnn.CreateCommand())
-                {
-                    insertCommand.CommandText = "INSERT INTO links (ActId, URI) VALUES (@ActId, @URI)";
-                    insertCommand.Parameters.AddWithValue("@ActId", act.Id);
-                    insertCommand.Parameters.AddWithValue("@URI", link.Uri);
-                    //insertCommand.Parameters.AddWithValue("@URI", link.Name);Add this at later stage...
-                    insertCommand.ExecuteNonQuery();
-                }
+                throw;
             }
         }
 
