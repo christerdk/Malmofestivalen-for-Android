@@ -80,7 +80,7 @@ namespace MalmoFestivalDataFetcher2011
             }
             catch (Exception ex)
             {
-                SendMail("MMMOS Import Error on " + DateTime.Now.ToLongDateString(), 
+                SendErrorMail("MMMOS Import Error on " + DateTime.Now.ToLongDateString(), 
                     ex.Message + "<br/><br/>" +
                     ex.StackTrace.Replace(Environment.NewLine, "<br/>") + "<br/><br/>" +
                     _log.ToString().Replace(Environment.NewLine, "<br/>")
@@ -111,6 +111,17 @@ namespace MalmoFestivalDataFetcher2011
             }
             Send(reportemail.Split(',').ToList(), "mmmos@christer.dk", subject, body);
         }
+
+        private static void SendErrorMail(string subject, string body)
+        {
+            var reportemail = ConfigurationManager.AppSettings["mfest.import.errorreportemail"];
+            if (String.IsNullOrWhiteSpace(reportemail))
+            {
+                throw new ConfigurationException("mfest.import.errorreportemail not found in appSettings.");
+            }
+            Send(reportemail.Split(',').ToList(), "mmmos@christer.dk", subject, body);
+        }
+
 
         private static string GetTargetDatabasePath()
         {
@@ -313,7 +324,7 @@ namespace MalmoFestivalDataFetcher2011
             }
             catch (Exception ex )
             {
-                throw;
+                throw new Exception("Act failed: " + act.UriSelf.Uri, ex);
             }
         }
 
@@ -426,15 +437,6 @@ namespace MalmoFestivalDataFetcher2011
         {
             dynamic jsonacts = GetDataFromUrl(_baseURI + "/json/act");
 
-#if DEBUG
-            for (int i = 0; i < 20; i++)
-            {
-                dynamic act = GetDataFromUrl(_baseURI + HttpUtility.UrlDecode(jsonacts[i].Uri));
-                acts.Add(act);
-                Write(string.Format("{0}: {1}", act.Title, act.Id));
-                Thread.Sleep(200); //Be gentle on the server
-            }
-#else 
             foreach (var actSnapshot in jsonacts)
             {
                 //string gnu = HttpUtility.UrlDecode(actSnapshot as string);
@@ -443,7 +445,6 @@ namespace MalmoFestivalDataFetcher2011
                 Write(string.Format("{0}: {1}", act.Title, act.Id));
                 Thread.Sleep(200); //Be gentle on the server
             }
-#endif
         }
 
         private static void LoadAllCategories(List<dynamic> categories)
