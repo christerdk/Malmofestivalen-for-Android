@@ -431,6 +431,7 @@ public class StartActivity extends Activity implements OnKeyListener {
     		super.onPostExecute(result);
     		try {
 	    		setProgressBarIndeterminateVisibility(false);
+	    		new CheckForDBUpdateTask().execute((Object)null);
 	    		if (_dialog != null) {
 	    			_dialog.dismiss();
 	    		}
@@ -457,7 +458,6 @@ public class StartActivity extends Activity implements OnKeyListener {
     	@Override
     	protected Boolean doInBackground(Object... arg0) {
 			
-			//After first time install, we place the default DB
     		if (_dbFileService.IsDatabasePresent()) {
 	    		long currentVersion = GetDBVersionNumber();
 				if (currentVersion == -1)

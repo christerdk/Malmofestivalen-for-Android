@@ -10,10 +10,14 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -22,6 +26,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.format.DateUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
@@ -36,6 +42,7 @@ import dk.christer.malmofestivalen.data.EventProvider;
 import dk.christer.malmofestivalen.data.FestivalDBHelper;
 import dk.christer.malmofestivalen.data.LinksProvider;
 import dk.christer.malmofestivalen.data.SceneProvider;
+import dk.christer.malmofestivalen.helpers.ToastHelper;
 import dk.christer.malmofestivalen.net.BinaryLoader;
 import dk.christer.malmofestivalen.services.DBFileService;
 
@@ -98,6 +105,11 @@ public class EventDetailActivity extends Activity {
         SetWebGroupState();
         SetupShareEvent();
         BindImage();
+        if (isIntentAvailable(this, GetCalendarIntent())) {
+	      	CharSequence thetext = getText(R.string.clickmenuforoptions);
+	      	ToastHelper.ShowToastOnce(this, "EventDetailMenuForMore", thetext.toString());
+        }
+
     }
 
     private void BindImage() {
@@ -402,4 +414,51 @@ public class EventDetailActivity extends Activity {
        } 
        return bm; 
     } 
+    
+    @Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+
+    	
+    	if (isIntentAvailable(this, GetCalendarIntent())) {
+    		menu.add(0, 0, 0, R.string.addtocalendar);	
+    	}
+		return super.onCreateOptionsMenu(menu);
+	}
+	@Override
+	public void onOptionsMenuClosed(Menu menu) {
+		super.onOptionsMenuClosed(menu);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+
+		switch (item.getItemId()) {
+		case 0:
+			Intent intent = GetCalendarIntent();
+			startActivity(intent);
+			break;
+		default:
+			break;
+		}
+		
+		return super.onOptionsItemSelected(item);
+	}
+	
+	public Intent GetCalendarIntent() {
+		Intent intent = new Intent(Intent.ACTION_EDIT);
+		intent.setType("vnd.android.cursor.item/event");
+		intent.putExtra("title", _title);
+		//intent.putExtra("description", "Some description");
+		intent.putExtra("beginTime", _startDate.getTime());
+		intent.putExtra("endTime", _endDate.getTime());
+		return intent;
+	}
+    
+	public static boolean isIntentAvailable(Context context, Intent intent) {
+	    final PackageManager packageManager = context.getPackageManager();
+	    
+	    List<ResolveInfo> list =
+	            packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+	    return list.size() > 0;
+	}
 }

@@ -86,5 +86,5 @@
 	
 	<string name="favorites_all">Show all</string>
 	<string name="favorites_future">Hide old</string>
-	
+	<string name="addtocalendar">Add to calendar (beta)</string>
 </resources>
