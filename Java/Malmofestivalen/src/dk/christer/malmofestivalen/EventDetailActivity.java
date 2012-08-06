@@ -3,6 +3,8 @@ package dk.christer.malmofestivalen;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.ref.SoftReference;
+import java.lang.ref.WeakReference;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.DateFormat;
@@ -24,6 +26,8 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.ResultReceiver;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.Menu;
@@ -44,6 +48,7 @@ import dk.christer.malmofestivalen.data.LinksProvider;
 import dk.christer.malmofestivalen.data.SceneProvider;
 import dk.christer.malmofestivalen.helpers.ToastHelper;
 import dk.christer.malmofestivalen.net.BinaryLoader;
+import dk.christer.malmofestivalen.net.ImageFetcher;
 import dk.christer.malmofestivalen.services.DBFileService;
 
 public class EventDetailActivity extends Activity {
@@ -76,6 +81,20 @@ public class EventDetailActivity extends Activity {
     FavoriteManager _favManager;
 
     GoogleAnalyticsWrapper _tracker;
+
+    private ResultReceiver mResultReceiver = new ResultReceiver(new Handler()) {
+        @Override
+        protected void onReceiveResult(int resultCode, Bundle resultData) {
+            try {
+                if (resultCode == ImageFetcher.IMAGE_LOADED) {
+                    setProgressBarIndeterminateVisibility(false);
+                    _actImageProgress.setVisibility(View.GONE);
+                }
+            } catch (Exception e) {
+                // Ignored. Should be handled more gracefully, but this will work
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,49 +132,17 @@ public class EventDetailActivity extends Activity {
     }
 
     private void BindImage() {
-    	
     	ImageView actImage = (ImageView)findViewById(R.id.actimage);
     	if (_uriImage.length() == 0) {
     		actImage.setVisibility(View.GONE);
     	}
     	else {
-    		new BindImageAsync().execute(_uriImage); 
+            setProgressBarIndeterminateVisibility(true);
+            _actImageProgress.setVisibility(View.VISIBLE);
+            ImageFetcher.getInstance(this).download(_actImage, _uriImage, mResultReceiver);
     	}
     }
 
-    
-    protected class BindImageAsync extends AsyncTask<String, Object, Bitmap> 
-	{
-		@Override
-    	protected void onPreExecute() {
-    		super.onPreExecute();
-    		setProgressBarIndeterminateVisibility(true);
-    		EventDetailActivity.this._actImageProgress.setVisibility(View.VISIBLE);
-    	}
-		
-    	@Override
-    	protected Bitmap doInBackground(String... arg0) {
-			
-			return getImageBitmap(arg0[0]);
-    	}
-    	
-    	
-    	@Override
-    	protected void onPostExecute(Bitmap result) {
-    		// TODO Auto-generated method stub
-    		super.onPostExecute(result);
-    		setProgressBarIndeterminateVisibility(false);
-    		EventDetailActivity.this._actImageProgress.setVisibility(View.GONE);
-    		if (result != null) {
-    			EventDetailActivity.this._actImage.setImageBitmap(result);
-    		}
-    	}
-    }
-    
-    
-    
-    
-    
     private void setupAnalytics() {
         _tracker = GoogleAnalyticsWrapper.getInstance();
         _tracker.trackPageView("/view/eventdetail");
@@ -201,13 +188,13 @@ public class EventDetailActivity extends Activity {
         if (linkscursor != null) {
         	while (linkscursor.moveToNext()) {
         		String link = linkscursor.getString(1);
-        		if (link.toLowerCase().indexOf("spotify.com") != -1) {
+        		if (link.toLowerCase().contains("spotify.com")) {
         			_linkSpotify = link;
         		}
-        		else if (link.toLowerCase().indexOf("youtube.com/watch") != -1) {
+        		else if (link.toLowerCase().contains("youtube.com/watch")) {
         			_linkYoutube = link;
         		}
-        		else if (link.toLowerCase().indexOf("myspace.com") != -1 ) {
+        		else if (link.toLowerCase().contains("myspace.com")) {
         			_linkMyspace = link;
         		}
         	}
@@ -397,28 +384,9 @@ public class EventDetailActivity extends Activity {
             }
         });
     }
-    
-    private Bitmap getImageBitmap(String url) { 
-        Bitmap bm = null; 
-        try { 
-            URL aURL = new URL(url); 
-            URLConnection conn = aURL.openConnection(); 
-            conn.connect(); 
-            InputStream is = conn.getInputStream(); 
-            BufferedInputStream bis = new BufferedInputStream(is); 
-            bm = BitmapFactory.decodeStream(bis); 
-            bis.close(); 
-            is.close(); 
-       } catch (IOException e) { 
-           Log.e("", "Error getting bitmap", e); 
-       } 
-       return bm; 
-    } 
-    
+
     @Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-
-    	
     	if (isIntentAvailable(this, GetCalendarIntent())) {
     		menu.add(0, 0, 0, R.string.addtocalendar);	
     	}

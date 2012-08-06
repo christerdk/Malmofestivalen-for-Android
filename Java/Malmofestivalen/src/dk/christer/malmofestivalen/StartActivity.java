@@ -222,8 +222,8 @@ public class StartActivity extends Activity implements OnKeyListener {
 		String body = getText(R.string.startshareappbody).toString();
 		Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
 		shareIntent.setType("text/plain");
-		shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Malmöfestivalen for Android");
-		shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Malmöfestivalen for Android: " + body + " " + url);
+		shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "MalmÃ¶festivalen for Android");
+		shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, "MalmÃ¶festivalen for Android: " + body + " " + url);
 		startActivity(Intent.createChooser(shareIntent, getText(R.string.eventsharevia)));      
 
 	}
