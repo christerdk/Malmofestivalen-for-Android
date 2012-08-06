@@ -11,6 +11,12 @@
   android:paddingRight="6dp"
   
   android:gravity="center_vertical" >
+  	<ImageView
+      android:scaleType="centerCrop"
+	  android:layout_width="70dp"
+	  android:layout_height="70dp"
+      android:id="@+id/eventitemrowimage" 
+      android:src="@drawable/question"/>
 	<LinearLayout
 	  xmlns:android="http://schemas.android.com/apk/res/android"
 	  android:layout_width="0dip"

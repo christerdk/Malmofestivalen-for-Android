@@ -24,6 +24,13 @@ public class EventCursorAdapter extends SimpleCursorAdapter {
 		
 		Cursor cursor = getCursor();
 		cursor.moveToPosition(position);
+
+		ImageView iv = (ImageView) row.findViewById(R.id.eventitemrowimage);
+
+		String url = cursor.getString(cursor.getColumnIndex(EventProvider.EVENT_KEY_URISMALLIIMAGE));
+		if (url.length() > 0) {			
+			imageDownloader.download(url, iv);
+		}
 		
 		
 		String start = cursor.getString(cursor.getColumnIndex(EventProvider.EVENT_KEY_STARTDATE));
