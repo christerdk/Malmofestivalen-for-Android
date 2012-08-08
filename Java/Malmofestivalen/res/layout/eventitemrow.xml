@@ -15,8 +15,7 @@
       android:scaleType="centerCrop"
 	  android:layout_width="70dp"
 	  android:layout_height="70dp"
-      android:id="@+id/eventitemrowimage" 
-      android:src="@drawable/question"/>
+      android:id="@+id/eventitemrowimage" />
 	<LinearLayout
 	  xmlns:android="http://schemas.android.com/apk/res/android"
 	  android:layout_width="0dip"

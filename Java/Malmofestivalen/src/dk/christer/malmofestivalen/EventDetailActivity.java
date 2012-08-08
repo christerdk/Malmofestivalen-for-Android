@@ -75,7 +75,7 @@ public class EventDetailActivity extends Activity {
     private String _sceneid = "";
     private Date _startDate = null;
     private Date _endDate = null;
-    private ProgressBar _actImageProgress;
+    //private ProgressBar _actImageProgress;
     ImageView _actImage = null;
     private String _categories = "";
     FavoriteManager _favManager;
@@ -88,7 +88,7 @@ public class EventDetailActivity extends Activity {
             try {
                 if (resultCode == ImageFetcher.IMAGE_LOADED) {
                     setProgressBarIndeterminateVisibility(false);
-                    _actImageProgress.setVisibility(View.GONE);
+                    //_actImageProgress.setVisibility(View.GONE);
                 }
             } catch (Exception e) {
                 // Ignored. Should be handled more gracefully, but this will work
@@ -110,7 +110,7 @@ public class EventDetailActivity extends Activity {
         _actImage = (ImageView)findViewById(R.id.actimage);
         loadEventInformation();
         loadFavoriteState();
-        _actImageProgress = (ProgressBar)EventDetailActivity.this.findViewById(R.id.actimageprogressbar);
+        //_actImageProgress = (ProgressBar)EventDetailActivity.this.findViewById(R.id.actimageprogressbar);
         
 
         setupAnalytics();
@@ -138,7 +138,7 @@ public class EventDetailActivity extends Activity {
     	}
     	else {
             setProgressBarIndeterminateVisibility(true);
-            _actImageProgress.setVisibility(View.VISIBLE);
+            //_actImageProgress.setVisibility(View.VISIBLE);
             ImageFetcher.getInstance(this).download(_actImage, _uriImage, mResultReceiver);
     	}
     }

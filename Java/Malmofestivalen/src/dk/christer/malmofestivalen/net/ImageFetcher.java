@@ -68,7 +68,7 @@ public class ImageFetcher {
         mImageCache = ImageCache.newInstance(context);
 
         // Could be done in another thread, but a bit overkill in this case
-        mPlaceHolder = BitmapFactory.decodeResource(context.getResources(), R.drawable.question);
+        mPlaceHolder = BitmapFactory.decodeResource(context.getResources(), R.drawable.malmofest_m);
     }
 
     /**
@@ -82,8 +82,8 @@ public class ImageFetcher {
             return;
         }
 
-        if (url == null) {
-            imageView.setImageBitmap(mPlaceHolder);
+        if (url == null || url.length() == 0) {
+            imageView.setImageBitmap(null);
             return;
         }
 
