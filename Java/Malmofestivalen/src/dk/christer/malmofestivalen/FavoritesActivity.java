@@ -28,6 +28,7 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.SimpleAdapter;
 import android.widget.AdapterView.OnItemClickListener;
+import dk.christer.malmofestivalen.adapters.FavoritesAdapter;
 import dk.christer.malmofestivalen.analytics.GoogleAnalyticsWrapper;
 import dk.christer.malmofestivalen.data.EventProvider;
 import dk.christer.malmofestivalen.data.FavoritesProvider;
@@ -170,7 +171,7 @@ public class FavoritesActivity extends Activity {
 			if (_favoriteData.size() > 0) {
 				ShowControl(_listView);
 				HideControl(_nofavorites);
-				SimpleAdapter adapter = new SimpleAdapter(FavoritesActivity.this, 
+				FavoritesAdapter adapter = new FavoritesAdapter(FavoritesActivity.this, 
 						_favoriteData,
 						R.layout.eventitemrow,
 						new String[] {"title", "time", "scen"},
@@ -219,7 +220,7 @@ public class FavoritesActivity extends Activity {
 					item.put("_id", Integer.toString(event.getInt(event.getColumnIndex(BaseColumns._ID))));
 					item.put("title", event.getString(event.getColumnIndex(EventProvider.EVENT_KEY_TITLE)));
 					item.put("scen", event.getString(event.getColumnIndex(EventProvider.EVENT_KEY_SCENETITLE)));
-					
+					item.put(FavoritesAdapter.SMALL_IMAGE_URL, event.getString(event.getColumnIndex(EventProvider.EVENT_KEY_URISMALLIIMAGE)));
 					String dateString = DateHelper.createShortDateResume(event.getString(event.getColumnIndex(EventProvider.EVENT_KEY_STARTDATE)), event.getString(event.getColumnIndex(EventProvider.EVENT_KEY_ENDDATE)));
 		
 					item.put("time", dateString);

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="horizontal"
+  android:background="#ffffff"
+  android:paddingTop="4dp"
+  android:paddingBottom="4dp"
+  android:paddingLeft="6dp"
+  android:paddingRight="6dp"
+  
+  android:gravity="center_vertical" >
+  	<!-- ImageView
+      android:scaleType="centerCrop"
+	  android:layout_width="70dp"
+	  android:layout_height="70dp"
+      android:id="@+id/favoriteitemrowimage" /-->
+	<LinearLayout
+	  xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:layout_width="0dip"
+	  android:layout_height="wrap_content"
+	  android:orientation="vertical"
+	  android:paddingLeft="10dp"
+	  android:layout_weight="1"
+	  >
+	  <TextView 
+	  	android:layout_width="fill_parent"
+	  	android:layout_height="wrap_content"
+		android:id="@+id/favoriteitemrowtitle"
+		android:textColor="#000000"
+		android:paddingLeft="2dp"
+		/>  
+	  <TextView 
+	  	android:layout_width="fill_parent"
+	  	android:layout_height="wrap_content"
+		android:id="@+id/favoriteitemrowtimeresume"
+		android:textColor="#000000"
+		android:paddingLeft="10dp"
+		android:textSize="12dp"
+		/>  
+	  <TextView 
+	  	android:layout_width="fill_parent"
+	  	android:layout_height="wrap_content"
+		android:id="@+id/favoriteitemrowscene"
+		android:textColor="#000000"
+		android:paddingLeft="10dp"
+		android:textSize="12dp"
+			/>  
+	</LinearLayout>
+	<ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrowroundright"/>
+</LinearLayout>
