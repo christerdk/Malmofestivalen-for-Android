@@ -136,7 +136,7 @@ public class EventProvider extends FestivalProvider {
 
     private Cursor getEventsBySceneId(final String sceneId) {
         return dbQuery(
-                new String[]{BaseColumns._ID, EVENT_KEY_TITLE, EVENT_KEY_STARTDATE},
+                new String[]{BaseColumns._ID, EVENT_KEY_TITLE, EVENT_KEY_STARTDATE, EVENT_KEY_URISMALLIIMAGE},
                 EVENT_KEY_SCENEID + "=?",
                 new String[]{
                         sceneId
@@ -147,7 +147,7 @@ public class EventProvider extends FestivalProvider {
 
     private Cursor getUpcomingEventsBySceneId(final String sceneId) {
         return dbQuery(
-                new String[]{BaseColumns._ID, EventProvider.EVENT_KEY_TITLE, EventProvider.EVENT_KEY_STARTDATE},
+                new String[]{BaseColumns._ID, EventProvider.EVENT_KEY_TITLE, EventProvider.EVENT_KEY_STARTDATE, EVENT_KEY_URISMALLIIMAGE},
                 EventProvider.EVENT_KEY_ENDDATE + " > datetime('now', 'localtime') and " + SceneProvider.KEY_SCENE_ID + " = ?",
                 new String[]{
                         sceneId
@@ -167,7 +167,7 @@ public class EventProvider extends FestivalProvider {
         EventProvider.EVENT_KEY_ENDDATE, VIRTUAL_KEY_SCENE_TITLE, EVENT_KEY_STARTDATE);
 
         //Quickfix!
-        query = "select events._id as _id, events.Title as EventTitle, events.StartDate as StartDate, scenes.Title as SceneTitle";
+        query = "select events._id as _id, events.Title as EventTitle, events.StartDate as StartDate, scenes.Title as SceneTitle, events.UriSmallImage as UriSmallImage";
 		query += " from events left outer join scenes on events.SceneId=scenes.SceneID where ";
 		query += " ( ";
 		query += " StartDate > datetime('now', 'localtime') "; 

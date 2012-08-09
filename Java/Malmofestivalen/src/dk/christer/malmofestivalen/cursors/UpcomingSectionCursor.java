@@ -17,9 +17,11 @@ import java.util.Date;
  * it shows the time and date of the event in a special manner.
  */
 public class UpcomingSectionCursor extends SectionCursor {
-    private SparseArray<String> mFormattedStrings;
+    public static final String TEXT_URL_SPLIT = ";;;";
+	private SparseArray<String> mFormattedStrings;
     private int mColumnIndexStartDate;
     private int mColumnIndexTitle;
+    private int mColumnIndexSmallImage;
 
     DateFormat mIso8601Format;
     DateFormat mTimeFormat;
@@ -39,6 +41,7 @@ public class UpcomingSectionCursor extends SectionCursor {
         mFormattedStrings = new SparseArray<String>();
         mColumnIndexStartDate = cursor.getColumnIndex(EventProvider.EVENT_KEY_STARTDATE);
         mColumnIndexTitle = cursor.getColumnIndex(EventProvider.VIRTUAL_KEY_EVENT_TITLE);
+        mColumnIndexSmallImage = cursor.getColumnIndex(EventProvider.EVENT_KEY_URISMALLIIMAGE);
         mCal = Calendar.getInstance();
         mIso8601Format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         mTimeFormat = new SimpleDateFormat("HH:mm");
@@ -70,6 +73,13 @@ public class UpcomingSectionCursor extends SectionCursor {
             itemText = mTimeFormat.format(startDate) + " " +
                     cursor.getString(mColumnIndexTitle) +
                     " (" + dayOfWeek + " d. " + mShortday.format(startDate) + ")";
+            
+            String url = cursor.getString(mColumnIndexSmallImage);
+            //This a hack as this cursor currently only returns one string. We continue with this, until another strategy is chosen.
+            if (url != null && url.length() > 0) {
+              itemText += TEXT_URL_SPLIT + url; 
+            }
+            
         } catch (ParseException e) {
             itemText = cursor.getString(mColumnIndexTitle);
             e.printStackTrace();

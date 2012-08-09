@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content" 
+  android:orientation="horizontal"
+  android:gravity="center_vertical"
+  android:paddingTop="4dp"
+  android:paddingBottom="4dp"
+  android:paddingLeft="6dp"
+  >
+  <ImageView
+      android:scaleType="centerCrop"
+	  android:layout_width="70dp"
+	  android:layout_height="70dp"
+      android:id="@+id/list_item_image" 
+      android:visibility="gone"/>
+    <TextView
     xmlns:android="http://schemas.android.com/apk/res/android"  
     android:id="@+id/list_item_title"  
     android:layout_width="fill_parent"
@@ -12,3 +28,5 @@
     android:gravity="left|center_vertical"
     android:drawableRight="@drawable/arrowroundright"
     />
+    
+    </LinearLayout>
